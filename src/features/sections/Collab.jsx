@@ -20,7 +20,8 @@ function Collab () {
 
     return(
         <section className="bg-[#f5f0e8] py-8 overflow-hidden">
-            <div className="flex gap-12 logo-marquee">
+            <div className="relative mx-auto max-w-7xl">
+                <div className="flex gap-12 animate-scroll">
                     {[...logos, ...logos].map((logo, i) => (
                         <div
                             key={i}
@@ -34,6 +35,7 @@ function Collab () {
                         </div>
                     ))}
                 </div>
+            </div>
         </section>
     );
 }
