@@ -44,7 +44,7 @@
 /* Karusell collab */
 @keyframes logo-marquee {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* flytt én “halv lengde” */
+  100% { transform: translateX(-50%); }
 }
 
 /* Klassen lagt på div rundt innholdet */
@@ -53,7 +53,7 @@
   will-change: transform; 
 }
 
-/* Valgfritt: pause på hover */
+/* pause på hover */
 .logo-marquee:hover,
 .logo-marquee:focus-within {
   animation-play-state: paused;
