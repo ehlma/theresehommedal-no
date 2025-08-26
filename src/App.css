@@ -40,22 +40,3 @@
 .read-the-docs {
   color: #888;
 }
-
-/* Karusell collab*/
-@keyframes logo-marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); } /* flytt én “halv lengde” */
-}
-
-/* Klassen du legger på sporet (track) */
-.logo-marquee {
-  animation: logo-marquee 25s linear infinite; /* juster 25s for fart */
-  will-change: transform; /* jevnere */
-}
-
-/* Valgfritt: pause på hover/fokus */
-.logo-marquee:hover,
-.logo-marquee:focus-within {
-  animation-play-state: paused;
-}
-
