@@ -49,8 +49,9 @@
 
 /* Klassen lagt på div rundt innholdet */
 .logo-marquee {
-  animation: logo-marquee 25s linear infinite;
-  will-change: transform; 
+  display: flex;
+  animation: logo-marquee 30s linear infinite;
+  transform: translate3d(0,0,0);
 }
 
 /* pause på hover */
