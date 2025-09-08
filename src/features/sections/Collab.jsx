@@ -17,22 +17,21 @@ const logos = [
 ];
 
 function Collab () {
-
     return(
         <section className="bg-[#f5f0e8] py-8 overflow-hidden">
-            <div className="flex gap-12 logo-marquee">
-                    {[...logos, ...logos].map((logo, i) => (
-                        <div
-                            key={i}
-                            className="flex shrink-0 items-center justify-center h-16 min-w-[140px] sm:min-w-[180px] opacity-80"
-                        >
-                            <img
-                                src={logo}
-                                alt={`Logo ${i + 1}`}
-                                className="max-h-12 object-contain grayscale hover:grayscale-0 transition"
-                            />
-                        </div>
-                    ))}
+                <div className="flex gap-16 logo-marquee">
+                        {[...logos, ...logos].map((logo, i) => (
+                            <div
+                                key={i}
+                                className="flex shrink-0 items-center justify-center h-16 w-40"                            >
+                                <img
+                                    src={logo}
+                                    alt={`Logo ${i + 1}`}
+                                    className="max-h-12 max-w-full object-contain" 
+                                    loading="lazy"
+                                />
+                            </div>
+                        ))}
                 </div>
         </section>
     );
