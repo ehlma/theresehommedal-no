@@ -1,31 +1,44 @@
 // src/features/sections/Header.jsx
 export default function Header() {
-    const links = [
+    const left = [
       { label: "Brud", href: "#bride" },
       { label: "Makeup", href: "#makeup" },
+    ];
+    const right = [
       { label: "Om meg", href: "#about" },
       { label: "Priser", href: "#prices" },
     ];
   
+    const linkCls =
+      "block leading-none transition-all duration-200 text-neutral-800 visited:text-neutral-800 hover:text-neutral-900 focus:text-neutral-900 active:text-neutral-900 hover:tracking-widest";
+  
     return (
       <header className="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur border-b border-neutral-200">
-        <nav className="h-10 flex items-center justify-center">
-          <ul className="flex items-center gap-12 text-[11px] uppercase tracking-normal text-neutral-800">
-            {links.map((l) => (
-              <li key={l.label}>
-                <a
-                    href={l.href}
-                    className="block leading-none transition-all duration-200
-                        text-neutral-800 visited:text-neutral-800
-                        hover:text-neutral-900 focus:text-neutral-900 active:text-neutral-900
-                        hover:tracking-widest"
-                >
-                    {l.label}
-                </a>
-
-              </li>
-            ))}
-          </ul>
+        <nav className="h-12 px-4">
+          {/* Midtkolonnen auto-bredde, sidene speiler hverandre */}
+          <div className="max-w-6xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center h-full">
+            {/* Venstre: trekk mot midten */}
+            <ul className="justify-self-end flex items-center gap-6 text-[11px] uppercase">
+              {left.map((l) => (
+                <li key={l.label}><a href={l.href} className={linkCls}>{l.label}</a></li>
+              ))}
+            </ul>
+  
+            <a
+                href="#top"
+                className="justify-self-center font-tangerine text-sm md:text-4xl font-bold leading-tight text-neutral-900 pl-12 pr-12"
+                aria-label="Therese Hommedal – hjem"
+            >
+                Therese Hommedal
+            </a>
+  
+            {/* Høyre: trekk mot midten */}
+            <ul className="justify-self-start flex items-center gap-6 text-[11px] uppercase">
+              {right.map((l) => (
+                <li key={l.label}><a href={l.href} className={linkCls}>{l.label}</a></li>
+              ))}
+            </ul>
+          </div>
         </nav>
       </header>
     );
