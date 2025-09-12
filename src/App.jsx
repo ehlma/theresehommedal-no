@@ -23,8 +23,8 @@ export default function App() {
       <main className="pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/brud" element={<BridePage />} />
-          <Route path="/priser" element={<PricesPage />} />
+          <Route path="/bride" element={<BridePage />} />
+          <Route path="/prices" element={<PricesPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

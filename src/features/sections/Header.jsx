@@ -1,12 +1,12 @@
 // src/features/sections/Header.jsx
 export default function Header() {
     const left = [
-      { label: "Brud", href: "#bride" },
+      { label: "Brud", href: "bride" },
       { label: "Makeup", href: "#makeup" },
     ];
     const right = [
       { label: "Om meg", href: "#about" },
-      { label: "Priser", href: "#prices" },
+      { label: "Priser", href: "prices" },
     ];
   
     const linkCls =
