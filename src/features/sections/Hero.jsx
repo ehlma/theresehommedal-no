@@ -1,49 +1,53 @@
 import heroImg from "../../assets/makeup/heroImage.jpg";
 
+// Hero.jsx (bare endringene vist)
 export default function Hero() {
-  return (
-    <section id="hero" className="relative bg-neutral-100">
-      <div className="max-w-6xl mx-auto px-4 pt-10 pb-16">
-        <div className="grid md:grid-cols-2 items-center gap-10">
-          {/* Tekst */}
-          <div>
+    return (
+      <section id="hero"   className="relative bg-neutral-100 -mt-16 pt-16">
+        <div
+          className="
+            max-w-6xl mx-auto px-4
+            md:h-[calc(100svh-64px)]            
+            md:flex md:items-center md:gap-12
+            py-12 md:py-0                  
+          "
+        >
+          {/* Tekstkolonne */}
+          <div className="w-full md:w-[44%]">
             <h1 className="font-tangerine text-6xl md:text-7xl leading-none text-neutral-900">
               Therese Hommedal
             </h1>
             <p className="mt-2 text-sm uppercase tracking-[0.25em] text-neutral-600">
               Makeupartist
             </p>
-
             <a
-              href="#about"
+              href="/#about"
               className="mt-6 inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
               Om meg
             </a>
           </div>
-
-          {/* Bilde med kant-fade for “utvidet” følelse */}
-          <div className="relative">
+  
+          {/* Bildekolonne */}
+          <div className="w-full md:w-[56%] md:h-full md:flex md:justify-end">
             <img
               src={heroImg}
               alt="Portrett av Therese Hommedal"
-              className="w-full max-w-[520px] mx-auto rounded-lg shadow-xl"
+              className="
+                md:h-full md:w-auto                
+                md:max-h-[calc(100svh-68px)]
+                rounded-lg shadow-xl
+              "
               style={{
                 WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
                 maskImage:
-                  "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
+                  "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
               }}
             />
           </div>
         </div>
-      </div>
-
-      {/* Subtil “ambient” bakgrunnsglød bak bildet */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(900px_400px_at_75%_50%,rgba(0,0,0,0.06),transparent_65%)]"
-      />
-    </section>
-  );
-}
+      </section>
+    );
+  }
+  

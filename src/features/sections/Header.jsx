@@ -24,11 +24,7 @@ export default function Header() {
               ))}
             </ul>
   
-            <a
-                href="#top"
-                className="justify-self-center font-tangerine text-sm md:text-4xl font-bold leading-tight text-neutral-900 pl-12 pr-12"
-                aria-label="Therese Hommedal – hjem"
-            >
+            <a href="/" className="justify-self-center font-tangerine text-3xl md:text-3xl font-bold leading-tight text-neutral-900 pl-12 pr-12">
                 Therese Hommedal
             </a>
   
