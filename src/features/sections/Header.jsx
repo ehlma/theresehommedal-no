@@ -2,7 +2,7 @@
 export default function Header() {
     const left = [
       { label: "Brud", href: "bride" },
-      { label: "Makeup", href: "#makeup" },
+      { label: "Makeup", href: "/makeup" },
     ];
     const right = [
       { label: "Om meg", href: "#about" },
