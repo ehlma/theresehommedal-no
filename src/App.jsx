@@ -2,12 +2,13 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./features/sections/Header.jsx";
 import Hero from "./features/sections/Hero.jsx";
 import PricesPage from "./pages/PricesPage.jsx"; // <- egen side
+import Bride from "./features/sections/Bride.jsx";
 
 function Home() {
-  // LEGG landingssiden/seksjonene her:
   return (
     <>
       <Hero />
+      <Bride/>
       <section id="bride" className="min-h-[40vh]"></section>
       <section id="makeup" className="min-h-[40vh]"></section>
       <section id="about" className="min-h-[40vh]"></section>
@@ -23,7 +24,6 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/priser" element={<PricesPage />} />
-          {/* Fallback så du slipper blank side ved feil URL */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

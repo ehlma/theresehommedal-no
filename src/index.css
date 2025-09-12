@@ -6,7 +6,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  display: block;          /* viktig: ikke flex/grid */
+  display: block;          /* ikke flex/grid */
   background: #ffffff;     /* lys bakgrunn */
   color: #111827;          /* neutral-900 som default tekstfarge */
 }
