@@ -54,13 +54,13 @@ export default function Bride() {
               <li>• Kan kombineres med hårstyling</li>
             </ul>
             <a
-                href="/brud"
+                href="/bride"
                 className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 mr-4 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
                 Se mer
             </a>
             <a
-              href="/priser"
+              href="/prices"
               className="mt-8 inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
               Se priser
