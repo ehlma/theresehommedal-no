@@ -1,9 +1,8 @@
 import heroImg from "../../assets/makeup/heroImage.jpg";
 
-// Hero.jsx (bare endringene vist)
 export default function Hero() {
     return (
-      <section id="hero"   className="relative bg-neutral-100 -mt-16 pt-16">
+      <section id="hero" className="relative bg-neutral-100 -mt-16 pt-16">
         <div
           className="
             max-w-6xl mx-auto px-4
