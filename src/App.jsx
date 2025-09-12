@@ -1,15 +1,15 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./features/sections/Header.jsx";
 import Hero from "./features/sections/Hero.jsx";
-import PricesPage from "./pages/PricesPage.jsx"; // <- egen side
 import Bride from "./features/sections/Bride.jsx";
+import PricesPage from "./pages/PricesPage.jsx";
+import BridePage from "./pages/BridePage.jsx";
 
 function Home() {
   return (
     <>
       <Hero />
-      <Bride/>
-      <section id="bride" className="min-h-[40vh]"></section>
+      <Bride />
       <section id="makeup" className="min-h-[40vh]"></section>
       <section id="about" className="min-h-[40vh]"></section>
     </>
@@ -23,6 +23,7 @@ export default function App() {
       <main className="pt-16">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/brud" element={<BridePage />} />
           <Route path="/priser" element={<PricesPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
