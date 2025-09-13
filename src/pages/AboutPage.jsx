@@ -64,7 +64,7 @@ export default function AboutPage() {
                   Se priser
                 </a>
                 <a
-                  href="mailto:therese.hommedal@gmail.com"
+                  href="/contact"
                   className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900"
                 >
                   Kontakt
