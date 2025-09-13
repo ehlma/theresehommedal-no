@@ -17,9 +17,8 @@ export default function Header() {
     return (
       <header className="fixed top-0 inset-x-0 z-50 bg-white/70 backdrop-blur border-b border-neutral-200">
         <nav className="h-12 px-4">
-          {/* Midtkolonnen auto-bredde, sidene speiler hverandre */}
           <div className="max-w-6xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center h-full">
-            {/* Venstre: trekk mot midten */}
+            {/* Venstre */}
             <ul className="justify-self-end flex items-center gap-6 text-[11px] uppercase">
               {left.map((l) => (
                 <li key={l.label}><a href={l.href} className={linkCls}>{l.label}</a></li>
@@ -30,7 +29,7 @@ export default function Header() {
                 Therese Hommedal
             </a>
   
-            {/* Høyre: trekk mot midten */}
+            {/* Høyre*/}
             <ul className="justify-self-start flex items-center gap-6 text-[11px] uppercase">
               {right.map((l) => (
                 <li key={l.label}><a href={l.href} className={linkCls}>{l.label}</a></li>

@@ -1,6 +1,6 @@
 // src/pages/AboutPage.jsx
 import brideHeader from "../assets/about/brideTh3.jpg";
-import brideCard from "../assets/about/brideTh2.jpg"; // <- kortet ved siden av teksten
+import brideCard from "../assets/about/brideTh2.jpg"; 
 
 export default function AboutPage() {
   document.title = "Om meg – Therese Hommedal";
@@ -72,7 +72,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Høyre: “kort” med pin (rotert litt) */}
+            {/* Høyre: kort med pin */}
             <div className="relative md:pt-4 lg:pt-6">
               <div className="relative mx-auto w-[260px] sm:w-[300px] lg:w-[340px] rotate-[2deg] bg-white p-2 rounded-xl shadow-2xl ring-1 ring-black/10">
                 {/* pin på toppen */}

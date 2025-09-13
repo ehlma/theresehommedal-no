@@ -1,4 +1,3 @@
-// src/pages/PricesPage.jsx
 import makeup12 from "../assets/makeup/makeup12.png";
 
 export default function PricesPage() {
@@ -46,7 +45,6 @@ export default function PricesPage() {
 
   return (
     <div className="bg-white">
-      {/* bredere side */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* venstre fast bredde, høyre fyller resten */}
         <div
@@ -56,7 +54,7 @@ export default function PricesPage() {
             xl:grid-cols-[640px_minmax(0,1fr)] xl:gap-24
           "
         >
-          {/* VENSTRE: PRISER */}
+          {/* Venstre  */}
           <div className="lg:pr-2">
             <h1 className="font-tangerine text-5xl leading-none text-neutral-900">
               Priser brud
@@ -75,7 +73,7 @@ export default function PricesPage() {
             </div>
           </div>
 
-          {/* HØYRE: kontakt-callout (nå bredere) + bilde under */}
+          {/* HØYRE: kontakt + bilde under */}
           <div className="lg:pl-8 xl:pl-12">
             <div className="w-full rounded-2xl border border-neutral-200 p-7 md:p-8">
               <h2 className="text-lg font-medium text-neutral-900">

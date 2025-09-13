@@ -47,10 +47,6 @@ export default function ContactPage() {
   
             <div className="flex items-center gap-3">
               <button type="submit" className={btnCls}>Send</button>
-              {/* valgfri fallback */}
-              <a className="text-sm text-neutral-600 underline" href="mailto:therese.hommedal@gmail.com">
-                Send e-post i stedet
-              </a>
             </div>
           </form>
         </div>
