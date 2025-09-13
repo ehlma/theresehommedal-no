@@ -5,6 +5,9 @@ import Bride from "./features/sections/Bride.jsx";
 import PricesPage from "./pages/PricesPage.jsx";
 import BridePage from "./pages/BridePage.jsx";
 import MakeupPage from "./pages/MakeupPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
+import CollaborationPage from "./pages/CollaborationPage.jsx";
 
 function Home() {
   return (
@@ -27,6 +30,12 @@ export default function App() {
           <Route path="/bride" element={<BridePage />} />
           <Route path="/prices" element={<PricesPage />} />
           <Route path="/makeup" element={<MakeupPage/>}/>
+          <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/contact" element={<ContactPage/>}/>
+          <Route path="/collaboration" element={<CollaborationPage/>}/>
+
+
+
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

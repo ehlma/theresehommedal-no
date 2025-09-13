@@ -12,7 +12,7 @@ export default function BridePage() {
             <a href="/prices" className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white">
               Se priser
             </a>
-            <a href="/bride" className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900">
+            <a href="/" className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900">
               Til forsiden
             </a>
           </div>
