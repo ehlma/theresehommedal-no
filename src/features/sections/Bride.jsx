@@ -7,7 +7,7 @@ export default function Bride() {
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] items-center gap-12 lg:gap-24">
 
-          {/* VENSTRE: ytre = ingen klipp, indre = klipp hovedbildet */}
+          {/* Venstre: ytre = ingen klipp, indre = klipp hovedbildet */}
           <div className="relative">
             {/* indre wrapper som klipper hovedbildet for runde hjørner */}
             <div className="rounded-3xl overflow-hidden">
@@ -24,7 +24,7 @@ export default function Bride() {
               </div>
             </div>
 
-            {/* LILLE INSET-BILDE – går utenfor til høyre */}
+            {/* Lille inset bildet */}
             <img
               src={imgInset}
               alt="Brud i bil"
@@ -39,7 +39,7 @@ export default function Bride() {
             />
           </div>
 
-          {/* HØYRE: tekst/CTA */}
+          {/* Høyre: tekst */}
           <div className="max-w-md">
             <h3 className="text-2xl font-medium text-neutral-900">
               Brud: Naturlig og holdbar glød

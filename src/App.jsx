@@ -34,8 +34,6 @@ export default function App() {
           <Route path="/contact" element={<ContactPage/>}/>
           <Route path="/collaboration" element={<CollaborationPage/>}/>
 
-
-
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

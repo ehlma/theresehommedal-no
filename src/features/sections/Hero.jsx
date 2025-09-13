@@ -11,7 +11,7 @@ export default function Hero() {
             py-12 md:py-0                  
           "
         >
-          {/* Tekstkolonne */}
+          {/* Tekst */}
           <div className="w-full md:w-[44%]">
             <h1 className="font-tangerine text-6xl md:text-7xl leading-none text-neutral-900">
               Therese Hommedal
@@ -20,14 +20,14 @@ export default function Hero() {
               Makeupartist
             </p>
             <a
-              href="/#about"
+              href="/about"
               className="mt-6 inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
               Om meg
             </a>
           </div>
   
-          {/* Bildekolonne */}
+          {/* Bilde */}
           <div className="w-full md:w-[56%] md:h-full md:flex md:justify-end">
             <img
               src={heroImg}

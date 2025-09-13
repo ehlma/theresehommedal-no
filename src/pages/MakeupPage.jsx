@@ -26,7 +26,7 @@ export default function MakeupPage() {
       <img
         src={src}
         alt={alt}
-        className="block rounded-lg w-full h-auto" // behold hele bildet, ingen cropping
+        className="block rounded-lg w-full h-auto" 
         loading="lazy"
         decoding="async"
       />
@@ -59,7 +59,7 @@ export default function MakeupPage() {
 
         {/* Desktop: overlappende collage */}
         <div className="relative hidden md:block mt-10">
-          {/* høyde på “lerretet” – øk/reduser ved behov */}
+          {/* høyde på lerretet  */}
           <div className="relative min-h-[1100px] lg:min-h-[1200px]">
             {/* Ytre kort – flyttet litt ut i kantene */}
             <Card
@@ -86,8 +86,6 @@ export default function MakeupPage() {
               src={pics.f}
               className="w-80 lg:w-[22rem] bottom-22 left-[42%] rotate-[1deg] z-10"
             />
-
-            {/* makeup7 → midten og øverst, uten å dekke ansikter */}
             <Card
               src={pics.g}
               className="w-80 lg:w-[24rem] left-[45%] -translate-x-1/2 rotate-[2deg] z-30"
