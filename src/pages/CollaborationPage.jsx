@@ -28,7 +28,7 @@ export default function CollaborationPage () {
   
           <div className="mt-10">
             <a
-              href="/kontakt"
+              href="/contact"
               className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
               Ta kontakt
