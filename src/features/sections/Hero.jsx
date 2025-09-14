@@ -1,4 +1,5 @@
 import heroImg from "../../assets/makeup/heroImage.jpg";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
     return (
@@ -19,12 +20,25 @@ export default function Hero() {
             <p className="mt-2 text-sm uppercase tracking-[0.25em] text-neutral-600">
               Makeupartist
             </p>
-            <a
-              href="/about"
-              className="mt-6 inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
-            >
-              Om meg
-            </a>
+            <div className="mt-6 flex items-center gap-3">
+                <a
+                    href="/about"
+                    className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
+                >
+                    Om meg
+                </a>
+
+                {/* Instagram  */}
+                <a
+                    href="https://www.instagram.com/theresehommedal/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
+                >
+                    <FaInstagram className="h-5 w-5" />
+                </a>
+            </div>
           </div>
   
           {/* Bilde */}
