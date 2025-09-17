@@ -1,66 +1,81 @@
-import heroImg from "../../assets/makeup/heroImage.jpg";
+import brideHome2 from "../../assets/bride/brideHome2.jpeg";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
-    return (
-      <section id="hero" className="relative bg-neutral-100 -mt-16 pt-16">
-        <div
-          className="
-            max-w-6xl mx-auto px-4
-            md:h-[calc(100svh-64px)]            
-            md:flex md:items-center md:gap-12
-            py-12 md:py-0                  
-          "
-        >
-          {/* Tekst */}
-          <div className="w-full md:w-[44%]">
-            <h1 className="font-tangerine text-6xl md:text-7xl leading-none text-neutral-900">
-              Therese Hommedal
-            </h1>
-            <p className="mt-2 text-sm uppercase tracking-[0.25em] text-neutral-600">
-              Makeupartist
-            </p>
-            <div className="mt-6 flex items-center gap-3">
-                <a
-                    href="/about"
-                    className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
-                >
-                    Om meg
-                </a>
+	return (
+		<section id="hero" className="relative">
+			{/* Wrapper som tar full høyde minus header */}
+			<div className="relative h-[calc(100svh-52px)]">
+				{/* Bakgrunnsbilde i full bredde/høyde */}
+				<img
+					src={brideHome2}
+					alt="Brud i bil, Therese Hommedal"
+					className="
+						absolute inset-x-0 -top-[10px]         
+						h-[calc(100%+1px)] w-full         
+						object-cover
+						object-[50%_5%]                      
+					"
+					style={{ objectPosition: "50% 5%" }}
+				/>
 
-                {/* Instagram  */}
-                <a
-                    href="https://www.instagram.com/theresehommedal/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
-                >
-                    <FaInstagram className="h-5 w-5" />
-                </a>
-            </div>
-          </div>
-  
-          {/* Bilde */}
-          <div className="w-full md:w-[56%] md:h-full md:flex md:justify-end">
-            <img
-              src={heroImg}
-              alt="Portrett av Therese Hommedal"
-              className="
-                md:h-full md:w-auto                
-                md:max-h-[calc(100svh-68px)]
-                rounded-lg shadow-xl
-              "
-              style={{
-                WebkitMaskImage:
-                  "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
-                maskImage:
-                  "linear-gradient(to right, transparent 0, black 6%, black 94%, transparent 100%)",
-              }}
-            />
-          </div>
-        </div>
-      </section>
-    );
-  }
-  
+				{/* Bunn-gradient for kontrast */}
+				<div className="pointer-events-none absolute inset-z-0 bottom-0 h-1/2 bg-gradient-to-t from-black/50 to-transparent" />
+
+				{/* Innhold/tekst – lagt over kjolen */}
+				<div className="relative z-10 h-full max-w-6xl mx-auto px-8 md:flex md:items-end">
+					<div className="w-full md:w-[44%] pb-[30%]">
+						<h1 className="font-tangerine text-white drop-shadow-md text-6xl md:text-7xl leading-none">
+							Therese Hommedal
+						</h1>
+						<div className="mt-2 flex items-center ml-10 gap-4 text-white/90">
+							<span className="h-[1px] w-12 bg-white/60" />
+							<span className="text-[12px] md:text-[13px] tracking-[0.28em]">
+								MAKEUPARTIST
+							</span>
+							<span className="h-[1px] w-12 bg-white/60" />
+
+						</div>
+
+						<div className="mt-6 ml-24 flex items-center gap-3">
+							{/* Om meg */}
+							<a
+								href="/about"
+								className="
+									rounded-full px-5 py-2 text-[13px] uppercase tracking-wide
+									bg-[#F6EFE7] text-neutral-900 ring-1 ring-neutral-900/10 shadow-sm
+									transition-colors duration-200
+									hover:bg-neutral-900 hover:text-[#F6EFE7] hover:ring-neutral-900
+									focus:outline-none focus:ring-2 focus:ring-neutral-900/40
+								"
+							>
+								Om meg
+							</a>
+
+							{/* Instagram */}
+							<a
+								href="https://www.instagram.com/theresehommedal/"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="Instagram"
+								className="
+									group flex h-10 w-10 items-center justify-center rounded-full
+									bg-[#F6EFE7] text-neutral-900 ring-1 ring-neutral-900/10 shadow-sm
+									transition-colors duration-200
+									hover:bg-neutral-900 hover:text-[#F6EFE7] hover:ring-neutral-900
+									focus:outline-none focus:ring-2 focus:ring-neutral-900/40
+								"
+							>
+								<FaInstagram className="h-5 w-5 transition-colors duration-200" />
+							</a>
+						</div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
