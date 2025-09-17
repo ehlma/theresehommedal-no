@@ -8,12 +8,14 @@ import MakeupPage from "./pages/MakeupPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import CollaborationPage from "./pages/CollaborationPage.jsx";
+import Collab from "./features/sections/Collab.jsx";
 
 function Home() {
   return (
     <>
       <Hero />
       <Bride />
+      <Collab />
       <section id="makeup" className="min-h-[40vh]"></section>
       <section id="about" className="min-h-[40vh]"></section>
     </>
@@ -29,10 +31,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/bride" element={<BridePage />} />
           <Route path="/prices" element={<PricesPage />} />
-          <Route path="/makeup" element={<MakeupPage/>}/>
-          <Route path="/about" element={<AboutPage/>}/>
-          <Route path="/contact" element={<ContactPage/>}/>
-          <Route path="/collaboration" element={<CollaborationPage/>}/>
+          <Route path="/makeup" element={<MakeupPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/collaboration" element={<CollaborationPage />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

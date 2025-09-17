@@ -1,5 +1,5 @@
 import imgBg from "../../assets/bride/brideHome1.jpg";
-import imgInset from "../../assets/bride/brideHome2.jpeg";
+import imgInset from "../../assets/bride/brideSnow.jpeg"
 
 export default function Bride() {
   return (
@@ -49,15 +49,15 @@ export default function Bride() {
               og hud. Prøvetime anbefales for å lande uttrykket i god tid.
             </p>
             <ul className="mt-6 space-y-2 text-neutral-700">
-              <li>• Prøvetime og planlegging</li>
-              <li>• On-location i Oslo og omegn</li>
-              <li>• Kan kombineres med hårstyling</li>
+              <li> Prøvetime og planlegging</li>
+              <li> On-location i Oslo og omegn</li>
+              <li> Kan kombineres med hårstyling</li>
             </ul>
             <a
-                href="/bride"
-                className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 mr-4 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
+              href="/bride"
+              className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 mr-4 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
             >
-                Se mer
+              Se mer
             </a>
             <a
               href="/prices"

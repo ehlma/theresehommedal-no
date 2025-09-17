@@ -1,10 +1,10 @@
-import camillaLogo from "../../assets/logos/camillaohrling.webp";
+import camillaLogo from "../../assets/logos/camillaohrling.png";
 import costumeLogo from "../../assets/logos/costumeawards.svg";
 import fenjaLogo from "../../assets/logos/fenja.avif";
 import johaugLogo from "../../assets/logos/johaug.png";
-import lindaLogo from "../../assets/logos/lindawickmann.webp"
+import lindaLogo from "../../assets/logos/lindaWick.png"
 import oslorunLogo from "../../assets/logos/oslorunway.svg";
-import woodlingLogo from "../../assets/logos/woodling.jpg";
+import woodlingLogo from "../../assets/logos/woodling.png";
 
 const logos = [
     camillaLogo,
@@ -16,23 +16,23 @@ const logos = [
     woodlingLogo
 ];
 
-function Collab () {
-    return(
+function Collab() {
+    return (
         <section className="bg-[#f5f0e8] py-8 overflow-hidden">
-                <div className="flex gap-16 logo-marquee">
-                        {[...logos, ...logos].map((logo, i) => (
-                            <div
-                                key={i}
-                                className="flex shrink-0 items-center justify-center h-16 w-40"                            >
-                                <img
-                                    src={logo}
-                                    alt={`Logo ${i + 1}`}
-                                    className="max-h-12 max-w-full object-contain" 
-                                    loading="lazy"
-                                />
-                            </div>
-                        ))}
-                </div>
+            <div className="flex gap-16 logo-marquee">
+                {[...logos, ...logos].map((logo, i) => (
+                    <div
+                        key={i}
+                        className="flex shrink-0 items-center justify-center h-16 w-40"                            >
+                        <img
+                            src={logo}
+                            alt={`Logo ${i + 1}`}
+                            className="max-h-12 max-w-full object-contain"
+                            loading="lazy"
+                        />
+                    </div>
+                ))}
+            </div>
         </section>
     );
 }
