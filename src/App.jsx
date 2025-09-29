@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import CollaborationPage from "./pages/CollaborationPage.jsx";
 import Collab from "./features/sections/Collab.jsx";
+import Collab2 from "./features/sections/Collab2.jsx";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <Hero />
       <Bride />
       <Collab />
+      <Collab2 />
       <section id="makeup" className="min-h-[40vh]"></section>
       <section id="about" className="min-h-[40vh]"></section>
     </>

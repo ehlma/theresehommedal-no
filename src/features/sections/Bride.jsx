@@ -3,7 +3,7 @@ import imgInset from "../../assets/bride/brideSnow.jpeg"
 
 export default function Bride() {
   return (
-    <section id="bride" className="bg-white">
+    <section id="bride" className="bg-[#f5f0e8]">
       <div className="max-w-6xl mx-auto px-4 py-20">
         <div className="grid md:grid-cols-[1.2fr_0.8fr] items-center gap-12 lg:gap-24">
 
