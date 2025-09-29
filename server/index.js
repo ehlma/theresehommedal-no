@@ -50,6 +50,9 @@ async function verifyTurnstile(token, ip) {
 
 app.post("/api/contact", async (req, res) => {
   try {
+    // HIT
+    console.log("PAYLOAD", req.body);
+
     const data = contactSchema.parse(req.body);
 
     // Honeypot: skal være tom

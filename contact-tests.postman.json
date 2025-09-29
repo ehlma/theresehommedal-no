@@ -1,0 +1,69 @@
+{
+  "info": {
+    "name": "Contact API Tests",
+    "description": "Tre tester for /api/contact: normal (dummy captcha), honeypot og tempo.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Contact - Normal (captcha dummy)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Testbruker\",\n  \"email\": \"test@example.com\",\n  \"message\": \"Hei! Dette er en test.\",\n  \"hp\": \"\",\n  \"tookMs\": 2500,\n  \"cfToken\": \"dummy_token_123456\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "contact"]
+        }
+      }
+    },
+    {
+      "name": "Contact - Honeypot (skal avvises)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Bot\",\n  \"email\": \"bot@example.com\",\n  \"message\": \"Spam!\",\n  \"hp\": \"robot\",\n  \"tookMs\": 2500,\n  \"cfToken\": \"dummy\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "contact"]
+        }
+      }
+    },
+    {
+      "name": "Contact - Too fast (skal avvises)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Rask\",\n  \"email\": \"fast@example.com\",\n  \"message\": \"Hei!\",\n  \"hp\": \"\",\n  \"tookMs\": 200,\n  \"cfToken\": \"dummy\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/contact",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "contact"]
+        }
+      }
+    }
+  ]
+}
