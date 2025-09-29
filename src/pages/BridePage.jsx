@@ -1,155 +1,285 @@
 // src/pages/BridePage.jsx
-import img1 from "../assets/bride/0.jpg";
-import img2 from "../assets/bride/5bebo0Wg.jpeg";
-import img3 from "../assets/bride/8.jpg";
-import img4 from "../assets/bride/CoYoVg_w.jpeg"; // <— viktig: .jpeg
-import img5 from "../assets/bride/IMG_7045.jpg";
+// Bilder – bruk gjerne flere/andre, men hold navnene i mappa som vist i skjermbildene dine
+import b0 from "../assets/bride/0.jpg";
+import b2 from "../assets/bride/5bebo0Wg.jpeg";
+import b3 from "../assets/bride/8.jpg";
+import b4 from "../assets/bride/brideHome1.jpg";
+import b5 from "../assets/bride/brideSnow.jpeg";
+import b6 from "../assets/bride/CoYoVg_w.jpeg";
+import b7 from "../assets/bride/IMG_5546.jpg";
+import b8 from "../assets/bride/IMG_7045.jpg";
+import b9 from "../assets/bride/IMG_9219.jpg";
+import b10 from "../assets/bride/IMG_9433.jpg";
+import b11 from "../assets/bride/IMG_9453.jpg";
+import b12 from "../assets/bride/IMG_9859.jpg";
+
+// Hår-galleri
+import h1 from "../assets/bride/hair/IMG_6050.jpg";
+import h2 from "../assets/bride/hair/IMG_6355.jpg";
+import h3 from "../assets/bride/hair/IMG_6821.jpg";
+import h4 from "../assets/bride/hair/IMG_7056.jpg";
+import h5 from "../assets/bride/hair/IMG_7061.jpg";
+import h6 from "../assets/bride/hair/IMG_8779.jpg";
 
 export default function BridePage() {
-  document.title = "Brud – Therese Hommedal";
+    document.title = "Brud – Therese Hommedal";
 
-  const btnPrimary =
-    "inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 " +
-    "text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white";
-  const btnGhost =
-    "inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 " +
-    "text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900";
+    const btnPrimary =
+        "inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white";
+    const btnGhost =
+        "inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900";
 
-  return (
-    <div className="bg-white">
-      {/* HEADER / INTRO */}
-      <section className="relative">
-        <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 text-center">
-          <h1 className="font-tangerine text-6xl md:text-7xl leading-none text-neutral-900">
-            Brude makeup & hår
-          </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-neutral-600">
-            Jeg tilbyr både sminke og hår til bruder og brudefølge. Om bryllupet holdes
-            utenfor Oslo-omegn, kommer reisekostnader i tillegg til prisen. Før den store
-            dagen gjennomfører vi en prøvetime hvor vi sammen finner ut hvilket uttrykk
-            som passer best. Dersom det blir behov for justeringer, kan flere prøvetimer
-            være aktuelle. Jeg jobber med alle typer uttrykk – fra naturlig «no-makeup»
-            look til mer glamorøse stiler – alltid med fokus på holdbarhet slik at looken
-            varer hele dagen og natten.
-          </p>
-          <div className="mt-6 flex justify-center gap-3">
-            <a href="/prices" className={btnPrimary}>Se priser</a>
-            <a href="/contact" className={btnGhost}>Kontakt</a>
-          </div>
+    const hair = [h1, h2, h3, h4, h5, h6];
+    const gallery = [b5, b6, b7, b8, b9, b10];
+
+    return (
+        <div className="bg-white">
+            {/* HERO / ABOUT THE SERVICE */}
+            <section className="relative bg-gradient-to-b from-[#eee6da] to-white -mt-4">
+                <div className="max-w-6xl mx-auto px-4 pt-12 pb-6 md:pb-10">
+                    <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
+                        {/* Tekst */}
+                        <div className="max-w-xl">
+                            <h1 className="font-parisienne text-6xl md:text-7xl leading-none text-neutral-900">
+                                MAKEUP <br />& HÅR
+                            </h1>
+
+                            <p className="mt-5 text-neutral-700">
+                                Jeg tilbyr både sminke og hår til bruder og brudefølge. Om bryllupet holdes
+                                utenfor Oslo-omegn, kommer reisekostnader i tillegg til prisen. Før den store
+                                dagen gjennomfører vi en prøvetime hvor vi sammen finner ut hvilket uttrykk som
+                                passer best. Dersom det blir behov for justeringer, kan flere prøvetimer være
+                                aktuelle. Jeg jobber med alle typer uttrykk – fra naturlig «no-makeup» look til
+                                mer glamorøse stiler – alltid med fokus på holdbarhet slik at looken varer hele
+                                dagen og natten.
+                            </p>
+
+                            <div className="mt-6 flex gap-3">
+                                <a href="/prices" className={btnPrimary}>Se priser</a>
+                                <a href="/contact" className={btnGhost}>Kontakt</a>
+                            </div>
+                        </div>
+
+                        {/* Bilde */}
+                        <div className="relative">
+                            <img
+                                src={b4}
+                                alt="Brud – naturlig og tidløs look"
+                                className="w-full h-[420px] md:h-[520px] object-cover rounded-2xl shadow-2xl ring-1 ring-black/10 bg-white"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* MEET / PROSESS – kort med tynn ramme og overlappende bilder */}
+            <section className="relative bg-white">
+                <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+                    <div className="relative border border-neutral-200 rounded-2xl p-6 md:p-10">
+                        {/* Overlappende bilder venstre */}
+                        <div className="hidden md:block absolute -left-6 -top-5 w-[240px]">
+                            <img
+                                src={b2}
+                                alt="Brud i snø – stemning"
+                                className="w-full h-[400px] object-cover rounded-xl shadow-xl ring-1 ring-black/10 bg-white"
+                            />
+                        </div>
+
+                        {/* Innhold */}
+                        <div className="md:ml-[260px]">
+                            <h2 className="text-[13px] uppercase tracking-[0.24em] text-neutral-500">
+                                Prosess & prøvetime
+                            </h2>
+                            <h3 className="mt-2 font-parisienne text-5xl md:text-6xl leading-none text-neutral-900">
+                                Skreddersydd til din dag
+                            </h3>
+                            <p className="mt-5 text-neutral-700 max-w-2xl">
+                                Vi starter med en prøvetime hvor vi tester hudforberedelse, base og uttrykk (fra
+                                delikat «no-makeup» til soft glam). Har du referansebilder eller ønsker, tar vi
+                                det inn i planleggingen. Ved behov setter vi opp en ekstra prøvetime for
+                                finjusteringer. På bryllupsdagen kommer jeg on-location og sørger for et holdbart
+                                resultat som tåler både tårer og dans.
+                            </p>
+
+                            <ul className="mt-6 grid gap-2 text-neutral-800 sm:grid-cols-2 max-w-2xl">
+                                <li> Prøvetime i forkant</li>
+                                <li> Sminke og hår for brud & forlovere</li>
+                                <li> On-location i Oslo & omegn</li>
+                                <li> Lang holdbarhet – fra morgen til kveld</li>
+                            </ul>
+
+                            <div className="mt-8 flex gap-3">
+                                <a href="/prices" className={btnPrimary}>Se priser</a>
+                                <a href="/contact" className={btnGhost}>Kontakt</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* STEP BY STEP- banner*/}
+            <section className="bg-[#3a3530] text-[#F6EFE7]">
+                <div className="max-w-6xl mx-auto px-4 py-10">
+                    <div className="grid gap-10 md:grid-cols-3">
+                        {[
+                            {
+                                n: "1.",
+                                t: "Prøvetime",
+                                d: "Vi starter med en prøvetime i god tid før bryllupet. Her tester vi hudforberedelse, base og ulike uttrykk – fra naturlig glød til mer glam – slik at du kan se hva som føles riktig."
+                            },
+                            {
+                                n: "2.",
+                                t: "Tilpasning",
+                                d: "Ut fra prøvetimen gjør vi eventuelle justeringer. Looken tilpasses hudtone, hårtype, kjole og lysforhold, slik at uttrykket blir skreddersydd til deg og din dag."
+                            },
+                            {
+                                n: "3.",
+                                t: "Bryllupsdagen",
+                                d: "På selve dagen kommer jeg on-location med en tydelig plan. Jeg sørger for en rolig gjennomføring for både brud og følge – og et resultat som holder hele dagen og natten."
+                            }
+                        ].map((it) => (
+                            <div key={it.n} className="text-left">
+                                <div className="text-6xl md:text-7xl leading-none font-light">{it.n}</div>
+                                <div className="mt-2 text-xl">{it.t}</div>
+                                <p className="mt-3 text-sm text-white/80 max-w-xs">{it.d}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* GALLERI – brud*/}
+            <section className="bg-white">
+                <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+                    {/* Mobil: tittel over */}
+                    <h3 className="md:hidden font-parisienne text-5xl leading-none text-neutral-900 text-center">
+                        BRUD <br /> & <br /> FORLOVERE
+                    </h3>
+
+                    {(() => {
+                        // del bildene i to kolonner (venstre/høyre)
+                        const leftCol = gallery.filter((_, i) => i % 2 === 0);
+                        const rightCol = gallery.filter((_, i) => i % 2 === 1);
+
+                        return (
+                            <div className="mt-8 grid gap-6 md:grid-cols-[1fr_auto_1fr] items-start">
+                                {/* VENSTRE KOLONNE */}
+                                <div className="space-y-4">
+                                    {leftCol.map((src, i) => (
+                                        <img
+                                            key={`L${i}`}
+                                            src={src}
+                                            alt={`Brud galleri ${i + 1}`}
+                                            className="block w-full h-auto rounded-2xl shadow-2xl"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    ))}
+                                </div>
+
+                                {/* MIDTKOLONNE: STICKY TITTEL (mellom bildene) */}
+                                <div className="hidden md:flex flex-col items-center self-start sticky top-24 px-2">
+                                    <h3 className="font-parisienne text-6xl leading-tight text-neutral-900 text-right">
+                                        BRUD <br /> OG <br /> FORLOVERE
+                                    </h3>
+                                </div>
+
+                                {/* HØYRE KOLONNE */}
+                                <div className="space-y-4">
+                                    {rightCol.map((src, i) => (
+                                        <img
+                                            key={`R${i}`}
+                                            src={src}
+                                            alt={`Brud galleri ${i + 1 + leftCol.length}`}
+                                            className="block w-full h-auto rounded-2xl shadow-2xl"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        );
+                    })()}
+                </div>
+            </section>
+
+
+            {/* HÅR  */}
+            <section className="bg-gradient-to-b from-white to-[#eee6da]">
+                <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+                    <div className="grid items-start gap-10 md:grid-cols-[1.2fr_0.8fr]">
+                        {/* VENSTRE: Polaroid-grid 3x2 */}
+                        <div className="grid grid-cols-3 gap-6">
+                            {[h1, h2, h3, h4, h5, h6].map((src, i) => {
+                                const rotations = [
+                                    "-rotate-[2.5deg]",
+                                    "rotate-[1.5deg]",
+                                    "-rotate-[1.5deg]",
+                                    "rotate-[2deg]",
+                                    "-rotate-[3deg]",
+                                    "rotate-[1deg]"
+                                ];
+                                return (
+                                    <figure
+                                        key={i}
+                                        className={[
+                                            "relative bg-white rounded-2xl shadow-2xl ring-1 ring-black/10",
+                                            "p-2 pt-2.5", // hvit kant som ramme
+                                            "transition-transform duration-200",
+                                            rotations[i % rotations.length],
+                                            "hover:rotate-0 hover:-translate-y-1"
+                                        ].join(" ")}
+                                    >
+                                        <img
+                                            src={src}
+                                            alt={`Hår galleri ${i + 1}`}
+                                            className="block h-full rounded-lg object-cover"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    </figure>
+                                );
+                            })}
+                        </div>
+
+                        {/* HØYRE: tittel + tekst + knapper */}
+                        <div className="md:pl-6">
+                            <h3 className="font-parisienne text-5xl leading-none text-neutral-900">
+                                HÅR TIL BRUD <br /> & BRUDEFØLGE
+                            </h3>
+
+                            <p className="mt-4 text-neutral-700">
+                                Enten du ønsker et klassisk oppsett, myke bølger eller en ren og sleek
+                                knute, finner vi en frisyre som passer til både kjole, ansiktsform og
+                                personlighet.<br /><br />
+                                Før bryllupsdagen setter vi opp en prøvetime hvor vi
+                                lander stil og tilbehør. På selve dagen kan jeg style både brud,
+                                forlovere og øvrig følge, samt hjelpe med montering av slør eller hårpynt.<br />
+                                Om du ønsker ekstra volum med clip-in extensions kan vi også tilrettelegge
+                                for det.<br /> <br />
+                                Jeg jobber on-location og lager en tidsplan som sikrer en rolig
+                                og effektiv gjennomføring. Reiser utenfor Oslo-omegn faktureres i tillegg.
+                            </p>
+
+                            <div className="mt-8 flex gap-3">
+                                <a
+                                    href="/prices"
+                                    className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
+                                >
+                                    Se priser
+                                </a>
+                                <a
+                                    href="/contact"
+                                    className="inline-flex items-center rounded-full border border-neutral-300 px-5 py-2 text-sm uppercase tracking-wide text-neutral-700 hover:border-neutral-900"
+                                >
+                                    Kontakt
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-      </section>
-
-      {/* BLOKK 1 — Bilde venstre, tekst høyre + skript-tittel over bildet */}
-      <section className="bg-[#f5f0e8]">
-        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            {/* Image with overlay title */}
-            <div className="relative">
-              <img
-                src={img2}
-                alt="Brud – klassisk og tidløs look"
-                className="w-full h-[420px] md:h-[500px] object-cover rounded-2xl shadow-2xl ring-1 ring-black/10 bg-white"
-              />
-              {/* Script label */}
-              <span
-                className="pointer-events-none absolute -left-4 -top-10 md:-left-10 md:-top-14
-                           font-tangerine text-5xl md:text-7xl text-neutral-800/80 select-none"
-                aria-hidden="true"
-              >
-                Den klassiske bruden
-              </span>
-            </div>
-
-            {/* Text */}
-            <div className="max-w-xl">
-              <h2 className="text-sm uppercase tracking-[0.22em] text-neutral-500">
-                Tidløst & naturlig
-              </h2>
-              <p className="mt-3 text-neutral-700">
-                Jeg sørger for at looken din matcher både kjolen, personligheten og
-                stemningen i bryllupet. Brudesminke skal føles komfortabel, men samtidig
-                gi det lille ekstra som holder hele dagen og natten.
-              </p>
-              <ul className="mt-6 space-y-2 text-neutral-800">
-                <li>• Prøvetime i forkant</li>
-                <li>• Sminke og hår for brud og forlovere</li>
-                <li>• On-location i Oslo og omegn</li>
-                <li>• Langvarig resultat – tåler både tårer og dans</li>
-              </ul>
-              <div className="mt-8 flex gap-3">
-                <a href="/prices" className={btnPrimary}>Se priser</a>
-                <a href="/contact" className={btnGhost}>Kontakt</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BLOKK 2 — Tekst venstre, bilde høyre + skript-tittel på høyre side */}
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-          <div className="grid items-center gap-10 md:grid-cols-2">
-            {/* Text */}
-            <div className="max-w-xl order-2 md:order-1">
-              <h2 className="text-sm uppercase tracking-[0.22em] text-neutral-500">
-                Skreddersydd til din dag
-              </h2>
-              <p className="mt-3 text-neutral-700">
-                Fra naturlig «no-makeup» til mer glamorøse uttrykk – vi lander
-                looken i god tid og tilpasser den hud, hår og antrekk. Jeg bruker
-                produkter og teknikker som tåler lys, bevegelse og lange dager.
-              </p>
-              <div className="mt-8 flex gap-3">
-                <a href="/prices" className={btnPrimary}>Se priser</a>
-                <a href="/contact" className={btnGhost}>Kontakt</a>
-              </div>
-            </div>
-
-            {/* Image with overlay title */}
-            <div className="relative order-1 md:order-2">
-              <img
-                src={img5}
-                alt="Brud – myk glam"
-                className="w-full h-[420px] md:h-[500px] object-cover rounded-2xl shadow-2xl ring-1 ring-black/10 bg-white"
-              />
-              <span
-                className="pointer-events-none absolute -right-6 -bottom-10 md:-right-10 md:-bottom-14
-                           font-tangerine text-5xl md:text-7xl text-neutral-800/80 select-none text-right"
-                aria-hidden="true"
-              >
-                Skreddersydd glød
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* BILDESTRIPE / LITEN COLLAGE (gir luft + variasjon) */}
-      <section className="bg-[#f5f0e8]">
-        <div className="max-w-6xl mx-auto px-4 py-12">
-          <div className="grid gap-4 md:grid-cols-3">
-            <img
-              src={img3}
-              alt="Detalj – brudesminke"
-              className="h-72 md:h-64 w-full object-cover rounded-2xl shadow-xl ring-1 ring-black/10 bg-white"
-            />
-            <img
-              src={img4}
-              alt="Brud – moderne elegant"
-              className="h-72 md:h-64 w-full object-cover rounded-2xl shadow-xl ring-1 ring-black/10 bg-white"
-            />
-            <img
-              src={img1}
-              alt="Forlover – harmonert uttrykk"
-              className="h-72 md:h-64 w-full object-cover rounded-2xl shadow-xl ring-1 ring-black/10 bg-white"
-            />
-          </div>
-          <div className="mt-10 flex justify-center gap-3">
-            <a href="/prices" className={btnPrimary}>Se priser</a>
-            <a href="/contact" className={btnGhost}>Kontakt</a>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
+    );
 }
