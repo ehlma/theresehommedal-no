@@ -3,7 +3,7 @@ import { FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
 	return (
-		<section id="hero" className="relative">
+		<section id="hero" className="relative bg-[#f5f0e8]">
 			{/* Wrapper som tar full høyde minus header */}
 			<div className="relative h-[calc(100svh-52px)]">
 				{/* Bakgrunnsbilde i full bredde/høyde */}
