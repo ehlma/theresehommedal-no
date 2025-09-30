@@ -1,28 +1,12 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./features/sections/Header.jsx";
-import Hero from "./features/sections/Hero.jsx";
-import Bride from "./features/sections/Bride.jsx";
 import PricesPage from "./pages/PricesPage.jsx";
 import BridePage from "./pages/BridePage.jsx";
 import MakeupPage from "./pages/MakeupPage.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import CollaborationPage from "./pages/CollaborationPage.jsx";
-import Collab from "./features/sections/Collab.jsx";
-import Collab2 from "./features/sections/Collab2.jsx";
-
-function Home() {
-  return (
-    <>
-      <Hero />
-      <Bride />
-      <Collab />
-      <Collab2 />
-      <section id="makeup" className="min-h-[40vh]"></section>
-      <section id="about" className="min-h-[40vh]"></section>
-    </>
-  );
-}
+import HomePage from "./pages/HomePage.jsx";
 
 export default function App() {
   return (
@@ -30,7 +14,7 @@ export default function App() {
       <Header />
       <main className="pt-16">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/bride" element={<BridePage />} />
           <Route path="/prices" element={<PricesPage />} />
           <Route path="/makeup" element={<MakeupPage />} />

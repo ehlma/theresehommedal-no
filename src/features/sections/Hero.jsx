@@ -5,14 +5,14 @@ export default function Hero() {
 	return (
 		<section id="hero" className="relative bg-[#f5f0e8]">
 			{/* Wrapper som tar full høyde minus header */}
-			<div className="relative h-[calc(100svh-52px)]">
+			<div className="relative h-[calc(90svh-52px)]">
 				{/* Bakgrunnsbilde i full bredde/høyde */}
 				<img
 					src={brideHome2}
 					alt="Brud i bil, Therese Hommedal"
 					className="
 						absolute inset-x-0 -top-[10px]         
-						h-[calc(100%+1px)] w-full         
+						h-full w-full         
 						object-cover
 						object-[50%_5%]                      
 					"
