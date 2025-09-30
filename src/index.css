@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
 @import "tailwindcss";
 
 /* Base/reset som ikke krangler med Tailwind */
@@ -11,7 +12,9 @@ body {
   color: #111827;          /* neutral-900 som default tekstfarge */
 }
 
-/* Logo-font */
+/* Font utilities (enkelt og robust) */
+.font-playfair { font-family: "Playfair Display", serif; }
+.font-inter    { font-family: Inter, sans-serif; }
 .font-tangerine { font-family: 'Tangerine', cursive; }
 
 /* Lenker: mørk grå, ikke blå, og ikke :visited-lilla */
