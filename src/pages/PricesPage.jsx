@@ -1,4 +1,4 @@
-import makeup12 from "../assets/makeup/makeup12.png";
+import makeup12 from "../assets/makeup/fenja1.jpg";
 
 export default function PricesPage() {
   document.title = "Priser – Therese Hommedal";

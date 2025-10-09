@@ -1,10 +1,8 @@
-// src/data/makeupPhotos.js
 
 // IMPORTER ALLE BILDER
 import fenja1 from "../assets/makeup/fenja1.jpg";
 import fenja2 from "../assets/makeup/fenja2.jpg";
 import fenja3 from "../assets/makeup/fenja3.jpg";
-import fenja4 from "../assets/makeup/fenja4.jpg";
 
 import karlh1 from "../assets/makeup/karlh1.jpeg";
 import karlh2 from "../assets/makeup/karlh2.jpeg";
@@ -49,7 +47,6 @@ export const makeupPhotos = [
     { src: fenja1, alt: "Fenja 1", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
     { src: fenja2, alt: "Fenja 2", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
     { src: fenja3, alt: "Fenja 3", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
-    { src: fenja4, alt: "Fenja 4", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
 
     // KARLH
     { src: karlh1, alt: "Karlh 1", photographer: "", model: "" },
