@@ -29,7 +29,7 @@ export default function MakeupPage() {
     );
 
     return (
-        <div className="bg-[#7C6E64]">
+        <div className="bg-[#7C6E64] -mt-4">
             <div className="max-w-6xl mx-auto px-4 py-12">
                 <h1 className="font-tangerine text-6xl leading-none text-white">
                     Makeup
