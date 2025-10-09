@@ -1,13 +1,14 @@
 
 // IMPORTER ALLE BILDER
-import fenja1 from "../assets/makeup/fenja1.jpg";
-import fenja2 from "../assets/makeup/fenja2.jpg";
-import fenja3 from "../assets/makeup/fenja3.jpg";
+import fenja1 from "../assets/makeup/fenja1.avif";
+import fenja2 from "../assets/makeup/fenja2.avif";
+import fenja3 from "../assets/makeup/fenja3.avif";
+import fenja4 from "../assets/makeup/fenja4.avif";
 
-import karlh1 from "../assets/makeup/karlh1.jpeg";
-import karlh2 from "../assets/makeup/karlh2.jpeg";
-import karlh3 from "../assets/makeup/karlh3.jpg";
-import karlh4 from "../assets/makeup/karlh4.jpg";
+import karlh1 from "../assets/makeup/karlh1.avif";
+import karlh2 from "../assets/makeup/karlh2.avif";
+import karlh3 from "../assets/makeup/karlh3.avif";
+import karlh4 from "../assets/makeup/karlh4.avif";
 
 import kjondal1 from "../assets/makeup/kjondal1.jpeg";
 import kjondal2 from "../assets/makeup/kjondal2.jpeg";
@@ -47,6 +48,7 @@ export const makeupPhotos = [
     { src: fenja1, alt: "Fenja 1", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
     { src: fenja2, alt: "Fenja 2", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
     { src: fenja3, alt: "Fenja 3", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
+    { src: fenja4, alt: "Fenja 4", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
 
     // KARLH
     { src: karlh1, alt: "Karlh 1", photographer: "", model: "" },
