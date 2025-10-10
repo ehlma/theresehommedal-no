@@ -45,53 +45,53 @@ import vilja4 from "../assets/makeup/vilja4.jpg";
 // ARRAY MED INFORMASJON
 export const makeupPhotos = [
     // FENJA
-    { src: fenja1, alt: "Fenja 1", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
-    { src: fenja2, alt: "Fenja 2", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
-    { src: fenja3, alt: "Fenja 3", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
-    { src: fenja4, alt: "Fenja 4", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
+    { src: fenja1, alt: "Fenja 1", title: "KAMPANJESHOOT for FENJA", stylist: "", designer: "", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
+    { src: fenja2, alt: "Fenja 2", title: "KAMPANJESHOOT for FENJA", stylist: "", designer: "", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
+    { src: fenja3, alt: "Fenja 3", title: "KAMPANJESHOOT for FENJA", stylist: "", designer: "", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
+    { src: fenja4, alt: "Fenja 4", title: "KAMPANJESHOOT for FENJA", stylist: "", designer: "", photographer: "@dilanrasol", model: "@a_tinholt (@teammodels)" },
 
-    // KARLH
-    { src: karlh1, alt: "Karlh 1", photographer: "", model: "" },
-    { src: karlh2, alt: "Karlh 2", photographer: "", model: "" },
-    { src: karlh3, alt: "Karlh 3", photographer: "", model: "" },
-    { src: karlh4, alt: "Karlh 4", photographer: "", model: "" },
+    // KARLH (ta med stylist @ireneaskedalen)
+    { src: karlh1, alt: "Karlh 1", title: "TESTSHOOT", stylist: "@ireneaskedalen", designer: "", photographer: "@karolinebskaug", model: "@karlhenriksolbakken" },
+    { src: karlh2, alt: "Karlh 2", title: "TESTSHOOT", stylist: "@ireneaskedalen", designer: "", photographer: "@karolinebskaug", model: "@karlhenriksolbakken" },
+    { src: karlh3, alt: "Karlh 3", title: "TESTSHOOT", stylist: "@ireneaskedalen", designer: "", photographer: "@karolinebskaug", model: "@karlhenriksolbakken" },
+    { src: karlh4, alt: "Karlh 4", title: "TESTSHOOT", stylist: "@ireneaskedalen", designer: "", photographer: "@karolinebskaug", model: "@karlhenriksolbakken" },
 
     // KJØNDAL
-    { src: kjondal1, alt: "Kjøndal 1", photographer: "", model: "" },
-    { src: kjondal2, alt: "Kjøndal 2", photographer: "", model: "" },
-    { src: kjondal3, alt: "Kjøndal 3", photographer: "", model: "" },
+    { src: kjondal1, alt: "Kjøndal 1", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@kjondalfoto", model: "@almaskolmen | @malinlcs" },
+    //{ src: kjondal2, alt: "Kjøndal 2", title: "", photographer: "", model: "" },
+    { src: kjondal3, alt: "Kjøndal 3", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@kjondalfoto", model: "@almaskolmen | @malinlcs | @anitaat" },
 
-    // KSENIA
-    { src: ksenia1, alt: "Ksenia 1", photographer: "", model: "" },
-    { src: ksenia2, alt: "Ksenia 2", photographer: "", model: "" },
-    { src: ksenia3, alt: "Ksenia 3", photographer: "", model: "" },
-    { src: ksenia4, alt: "Ksenia 4", photographer: "", model: "" },
-    { src: ksenia5, alt: "Ksenia 5", photographer: "", model: "" },
+    // KSENIA (stylist: @synne___louise )
+    { src: ksenia1, alt: "Ksenia 1", title: "PORTOFOLIO for @3rd.management", stylist: "@synne____louise", designer: "", photographer: "@markusmjaaland", model: "@ksunvkv" },
+    { src: ksenia2, alt: "Ksenia 2", title: "PORTOFOLIO for @3rd.management", stylist: "@synne____louise", designer: "", photographer: "@markusmjaaland", model: "@ksunvkv" },
+    { src: ksenia3, alt: "Ksenia 3", title: "PORTOFOLIO for @3rd.management", stylist: "@synne____louise", designer: "", photographer: "@markusmjaaland", model: "@ksunvkv" },
+    { src: ksenia4, alt: "Ksenia 4", title: "PORTOFOLIO for @3rd.management", stylist: "@synne____louise", designer: "", photographer: "@markusmjaaland", model: "@ksunvkv" },
+    { src: ksenia5, alt: "Ksenia 5", title: "PORTOFOLIO for @3rd.management", stylist: "@synne____louise", designer: "", photographer: "@markusmjaaland", model: "@ksunvkv" },
 
     // MAIKEN
-    { src: maiken1, alt: "Maiken 1", photographer: "", model: "" },
-    { src: maiken2, alt: "Maiken 2", photographer: "", model: "" },
-    { src: maiken3, alt: "Maiken 3", photographer: "", model: "" },
+    { src: maiken1, alt: "Maiken 1", title: "PORTOFOLIO", stylist: "", designer: "", photographer: "@trulsqvale", model: "@maikenwn" },
+    { src: maiken2, alt: "Maiken 2", title: "PORTOFOLIO", stylist: "", designer: "", photographer: "@trulsqvale", model: "@maikenwn" },
+    { src: maiken3, alt: "Maiken 3", title: "PORTOFOLIO", stylist: "", designer: "", photographer: "@trulsqvale", model: "@maikenwn" },
 
-    // MARIANNE
-    { src: marianne1, alt: "Marianne 1", photographer: "", model: "" },
-    { src: marianne2, alt: "Marianne 2", photographer: "", model: "" },
+    // MARIANNE (designer: @em______hm)
+    { src: marianne1, alt: "Marianne 1", title: "PHOTOSHOOT", stylist: "", designer: "em__________hm", photographer: "@stephaniesikkes", model: "@mariannehaugli" },
+    { src: marianne2, alt: "Marianne 2", title: "PHOTOSHOOT", stylist: "", designer: "em__________hm", photographer: "@stephaniesikkes", model: "@mariannehaugli" },
 
-    // SKOLE
-    { src: skole1, alt: "Skole 1", photographer: "", model: "" },
-    { src: skole2, alt: "Skole 2", photographer: "", model: "" },
-    { src: skole3, alt: "Skole 3", photographer: "", model: "" },
-    { src: skole4, alt: "Skole 4", photographer: "", model: "" },
+    // SKOLE 
+    { src: skole1, alt: "Skole 1", title: "SKOLEOPPGAVE ved LW School of makeup", stylist: "", designer: "", photographer: "@nellyozphotography", model: "@frida_elene" },
+    { src: skole2, alt: "Skole 2", title: "SKOLEOPPGAVE ved LW School of makeup", stylist: "", designer: "", photographer: "@siobhanbeasleyphotography", model: "@isaborring" },
+    { src: skole3, alt: "Skole 3", title: "MASTERCLASS med @lapetitvengance", stylist: "", designer: "", photographer: "@siobhanbeasleyphotography", model: "@nadiabdaniel" },
+    { src: skole4, alt: "Skole 4", title: "SKOLEOPPGAVE ved LW School of makeup", stylist: "", designer: "", photographer: "@nellyozphotography", model: "@frida_elene" },
 
     // SOFIA
-    { src: sofia1, alt: "Sofia 1", photographer: "", model: "" },
-    { src: sofia2, alt: "Sofia 2", photographer: "", model: "" },
-    { src: sofia3, alt: "Sofia 3", photographer: "", model: "" },
-    { src: sofia4, alt: "Sofia 4", photographer: "", model: "" },
+    { src: sofia1, alt: "Sofia 1", title: "PORTOFOLIO for @3rd.management", stylist: "", designer: "", photographer: "@markusmjaaland", model: "@sofiamqh" },
+    { src: sofia2, alt: "Sofia 2", title: "PORTOFOLIO for @3rd.management", stylist: "", designer: "", photographer: "@markusmjaaland", model: "@sofiamqh" },
+    { src: sofia3, alt: "Sofia 3", title: "PORTOFOLIO for @3rd.management", stylist: "", designer: "", photographer: "@markusmjaaland", model: "@sofiamqh" },
+    { src: sofia4, alt: "Sofia 4", title: "PORTOFOLIO for @3rd.management", stylist: "", designer: "", photographer: "@markusmjaaland", model: "@sofiamqh" },
 
     // VILJA
-    { src: vilja1, alt: "Vilja 1", photographer: "", model: "" },
-    { src: vilja2, alt: "Vilja 2", photographer: "", model: "" },
-    { src: vilja3, alt: "Vilja 3", photographer: "", model: "" },
-    { src: vilja4, alt: "Vilja 4", photographer: "", model: "" },
+    { src: vilja1, alt: "Vilja 1", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@trulskvaqvale", model: "@viljanock" },
+    { src: vilja2, alt: "Vilja 2", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@trulskvaqvale", model: "@viljanock" },
+    { src: vilja3, alt: "Vilja 3", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@trulskvaqvale", model: "@viljanock" },
+    { src: vilja4, alt: "Vilja 4", title: "TESTSHOOT", stylist: "", designer: "", photographer: "@trulskvaqvale", model: "@viljanock" },
 ];
