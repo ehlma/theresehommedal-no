@@ -2,7 +2,7 @@
 export default function Header() {
   const left = [
     { label: "Brud", href: "/bride" },
-    { label: "Makeup", href: "/makeup" },
+    { label: "Galleri", href: "/makeup" },
     { label: "Samarbeid", href: "/collaboration" },
   ];
   const right = [
@@ -25,8 +25,8 @@ export default function Header() {
             ))}
           </ul>
 
-          <a href="/" className="justify-self-center font-tangerine text-3xl md:text-3xl font-bold leading-tight text-neutral-900 pl-12 pr-12">
-            ThereseHommedal
+          <a href="/" className="justify-self-center text-3xl md:text-3xl leading-tight text-neutral-900 pl-12 pr-12">
+            Therese Hommedal
           </a>
 
           {/* Høyre*/}
