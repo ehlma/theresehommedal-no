@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Header from "./features/sections/Header.jsx";
+import Header from "./features/sections/landing-page/Header.jsx";
 import PricesPage from "./pages/PricesPage.jsx";
 import BridePage from "./pages/BridePage.jsx";
 import MakeupPage from "./pages/MakeupPage.jsx";

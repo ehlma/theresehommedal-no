@@ -1,4 +1,4 @@
-import brideHome2 from "../../assets/bride/brideHome2.jpeg";
+import brideHome2 from "../../../assets/bride/brideHome2.jpeg";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
