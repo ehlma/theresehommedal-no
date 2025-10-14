@@ -1,4 +1,4 @@
-import Hero from "../features/sections/landing-page/Hero.jsx";
+import Hero from "../features/sections/landing-page/Hero.jsx"; 
 import Bride from "../features/sections/Bride.jsx";
 import Collab from "../features/sections/Collab.jsx";
 // import ServiceCards from "src/features/sections/landing-page/ServiceCards.jsx";

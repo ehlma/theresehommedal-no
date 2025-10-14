@@ -1,23 +1,15 @@
 export default function ServiceCards() {
     return (
-        <>
-            <section>
-                <div>
-                    <header>
-                        <p className="font-inter text-[12px] uppercase text-neutral-500">
-                            Tjenester
-                        </p>
-                        <h2 className="font-playfair text-3xl text-neutral-900">
-                            Makeup og styling for enhver anledning
-                        </h2>
-                        <p className="font-inter text-neutral-700">
-                            Skreddersydde pakker for brud, event og photoshoot
-                        </p>
+        <section className="sercices section">
+            <div className="container-fluid">
+                <div className="panel services-panel p-6 md:p-10">
+                    <header className="services-header">
+                        <p className="eyebrow">Tjenester</p>
+                        <h2 className="heading-2">Makeup & Styling for enhver enhver anledning</h2>
+                        <p className="text-body mt-3">Sreddersydde pakker for bruk, event og photoshoot</p>
                     </header>
-
-                    {/* grid kolonner her */}
                 </div>
-            </section>
-        </>
+            </div>
+        </section>
     )
 }
