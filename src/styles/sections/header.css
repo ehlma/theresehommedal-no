@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap');
+
+/* header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: #F3ECE4;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header-nav {
+    padding: 0.5rem 1.5rem;
+}
+
+.header-inner {
+    max-width: 72rem;
+    margin-inline: auto;
+}
+
+/* header innhold til venstre*/
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* navn/logo */
+.header-logo {
+    font-family: "Playfair Display", serif;
+    font-weight: 100;
+    font-size: 1.9rem;
+    color: #1c1c1c;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25rem;
+}
+
+/* Link-linje under */
+.header-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+}
+
+.header-links a {
+    color: #222;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.header-links a {
+    color: #222;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.25s ease;
+}
+
+/* underline-animasjon på hover */
+.header-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header-links a:hover {
+    color: #000;
+}
+
+/* Når du hover, bare animerer underline – ingen layout-endring */
+.header-links a:hover::after {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+
+/* responsivitet*/
+@media (min-width: 768px) {
+    .header-logo {
+        font-size: 1.5rem;
+    }
+
+    .header-links {
+        gap: 2rem;
+    }
+}
