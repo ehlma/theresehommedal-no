@@ -1,6 +1,6 @@
 // src/pages/PricesPage.jsx
 import makeup12 from "../assets/bride/IMG_7045.jpg";
-import { FaInstagram, FaPhone } from "react-icons/fa";
+import { FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
 
 
 export default function PricesPage() {
@@ -95,15 +95,18 @@ export default function PricesPage() {
                         <a
                             href="/contact"
                             className="
+                            gap-2
                             relative inline-flex items-center justify-center 
                             px-7 py-2.5 text-sm uppercase tracking-wide
                             text-stone-900 transition-all duration-300
                             hover:text-stone-500
                             after:content-[''] after:absolute after:bottom-0 after:left-1/2 
                             after:-translate-x-1/2 after:w-0 after:h-[1px] after:bg-stone-500 
-                            after:transition-all after:duration-300 hover:after:w-[65%]
+                            after:transition-all after:duration-300 hover:after:w-[70%]
                           "
                         >
+                            <FaEnvelope className="w-5 h-5" />
+
                             Kontaktskjema
                         </a>
                         {/* Instagram */}
