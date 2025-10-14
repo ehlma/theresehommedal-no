@@ -1,43 +1,56 @@
+import { useEffect, useState, useRef } from "react";
 import { makeupPhotos } from "../data/makeupPageImages";
+import "../styles/sections/gallery.css";
 
 export default function MakeupPage() {
     document.title = "Makeup – Therese Hommedal";
 
-    // Polaroid 
+    const [scrolled, setScrolled] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const onScroll = () => {
+            // terskel: juster om du vil at den skal trigge tidligere/senere
+            setScrolled(window.scrollY > 40);
+        };
+        onScroll(); // sett initial state hvis man kommer inn midt i sida
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
     const Polaroid = ({ src, alt, title, stylist, designer, photographer, model }) => (
-        <figure className="break-inside-avoid mb-5 bg-white p-3 shadow-xl ring-1 ring-black/10">
+        <figure className="polaroid">
             <img
                 src={src}
                 alt={alt}
-                className="block w-full object-cover"
+                className="polaroid-img"
                 loading="lazy"
                 decoding="async"
             />
-            <figcaption className="mt-3 text-[11px] leading-4 text-neutral-700">
+            <figcaption className="polaroid-caption">
                 {title && (
                     <div>
-                        <span className="font-bold">{title}</span>
+                        <span className="polaroid-title">{title}</span>
                     </div>
                 )}
-                <br />
                 {stylist && (
                     <div>
-                        Stylist: <span className="font-normal">{stylist}</span>
+                        Stylist: <span>{stylist}</span>
                     </div>
                 )}
                 {designer && (
                     <div>
-                        Designer: <span className="font-normal">{designer}</span>
+                        Designer: <span>{designer}</span>
                     </div>
                 )}
                 {photographer && (
-                    <div className="font-medium">
-                        Foto: <span className="font-normal">{photographer}</span>
+                    <div>
+                        Foto: <span>{photographer}</span>
                     </div>
                 )}
                 {model && (
                     <div>
-                        Modell: <span className="font-normal">{model}</span>
+                        Modell: <span>{model}</span>
                     </div>
                 )}
             </figcaption>
@@ -45,17 +58,27 @@ export default function MakeupPage() {
     );
 
     return (
-        <div className="bg-[#7C6E64] -mt-4">
-            <div className="max-w-6xl mx-auto px-4 py-12">
-                <h1 className="text-6xl font-light leading-none text-white">
-                    GALLERI
-                </h1>
-                <div className="mt-8 columns-1 sm:columns-2 lg:columns-3 gap-5">
+        <section className="gallery-section" ref={containerRef}>
+            {/* ① Overlay-tittel (horisontal, over bildene helt øverst) */}
+            <div className={`gallery-title-overlay ${scrolled ? "is-hidden" : "is-visible"}`}>
+                <h1 className="gallery-title-overlay-text">GALLERI</h1>
+            </div>
+
+            <div className="gallery-container">
+                {/* ② Sticky vertikal tittel til venstre */}
+                <div className="gallery-title-wrap">
+                    <h1 className={`gallery-title-vertical ${scrolled ? "is-visible" : "is-hidden"}`}>
+                        GALLERI
+                    </h1>
+                </div>
+
+                {/* ③ Innholdet (masonry) */}
+                <div className="gallery-content">
                     {makeupPhotos.map((p, i) => (
                         <Polaroid key={i} {...p} />
                     ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

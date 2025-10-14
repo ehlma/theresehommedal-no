@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Explora&display=swap');
+
+/* grunnleggende */
+.gallery-section {
+    position: relative;
+    background: #7C6E64;
+    margin-top: -1rem;
+    /* -mt-4 */
+    overflow: clip;
+}
+
+/* Maksbredde + padding */
+.gallery-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-block: 3rem;
+    padding-inline: 2rem;
+}
+
+/* 1) overlay (øverst, horisontal) */
+.gallery-title-overlay {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    display: grid;
+    margin-left: 8rem;
+    padding-top: 1.5rem;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity .45s ease, transform .45s ease;
+    will-change: opacity, transform;
+}
+
+/*Galleri tittel på toppen*/
+.gallery-title-overlay-text {
+    color: #E8DCCF;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    line-height: 1.1;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    letter-spacing: 12px;
+}
+
+.gallery-title-overlay.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-title-overlay.is-hidden {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+
+/* 2) vertikal tittel sticky (venstre) */
+.gallery-title-wrap {
+    position: sticky;
+    top: 6rem;
+    align-self: flex-start;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+.gallery-title-vertical {
+    color: #E8DCCF;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-size: clamp(2rem, 6vw, 3rem);
+
+    /* vertikal skriving */
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) translateY(8px);
+    transform-origin: center;
+    transition: opacity .45s ease, transform .45s ease;
+    will-change: opacity, transform;
+    opacity: 0;
+    /* start skjult */
+}
+
+.gallery-title-vertical.is-visible {
+    opacity: 1;
+    transform: rotate(180deg) translateY(0);
+}
+
+.gallery-title-vertical.is-hidden {
+    opacity: 0;
+    transform: rotate(180deg) translateY(8px);
+}
+
+/* Mobil: horisontal tittel igjen */
+@media (max-width: 640px) {
+    .gallery-container {
+        flex-direction: column;
+    }
+
+    .gallery-title-wrap {
+        position: relative;
+        top: auto;
+    }
+
+    .gallery-title-vertical,
+    .gallery-title-vertical.is-visible,
+    .gallery-title-vertical.is-hidden {
+        writing-mode: horizontal-tb;
+        transform: none;
+        opacity: 1;
+        text-align: center;
+        letter-spacing: 0.2em;
+    }
+
+    /* Skjul overlay på mobil så vi slipper dobbel tittel */
+    .gallery-title-overlay {
+        display: none;
+    }
+}
+
+/* 3) Innhold (masonry)*/
+.gallery-content {
+    flex: 1;
+    column-count: 1;
+    column-gap: 1.25rem;
+    margin-top: 3.5rem;
+    /* luft under overlayen i toppen */
+}
+
+@media (min-width: 640px) {
+    .gallery-content {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-content {
+        column-count: 3;
+    }
+}
+
+/* polariod */
+.polaroid {
+    break-inside: avoid;
+    margin-bottom: 1.25rem;
+    background: #fff;
+    padding: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.polaroid-img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.polaroid-caption {
+    margin-top: 0.75rem;
+    font-size: 11px;
+    line-height: 1.1rem;
+    color: #555;
+}
+
+/* Explora for tittel inne i kortet */
+.polaroid-title {
+    display: block;
+    font-family: "Explora", cursive;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: #2e2e2e;
+    margin-bottom: 0.25rem;
+}
+
+.polaroid-caption span {
+    font-weight: 400;
+}
+
+.polaroid-caption div {
+    margin-top: 2px;
+}
