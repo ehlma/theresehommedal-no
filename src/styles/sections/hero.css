@@ -1,0 +1,95 @@
+/* =========================
+HERO SECTION STYLING
+========================= */
+.hero {
+  position: relative;
+  background: var(--surface-muted);
+  overflow: hidden;
+}
+
+/* wrapper med høyde = nesten full viewport - header*/
+.hero-wrap {
+  position: relative;
+  height: calc(90svh - 52px);
+}
+
+/* bakgrunnsbilde */
+.hero-bg {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 7%;
+}
+
+.hero-gradient {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+}
+
+.hero-col {
+  width: 100%;
+  align-self: flex-end;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hero-col {
+    width: 44%;
+    padding-bottom: 3rem;
+  }
+}
+
+.hero-row {
+  display: flex;
+  width: 100%;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+@media (min-width: 768) {
+  .hero-row {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+/* typografi og spacing */
+.hero h1.heading-hero {
+  color: var(--text-primary);
+}
+
+.hero .eyebrow {
+  color: var(--text-primary);
+  opacity: 0.85;
+}
+
+/* link-knapp */
+.hero .link-btn {
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.hero .link-btn .arrow {
+  transition: transform 0.3s ease;
+  margin-left: 0.5rem;
+}
+
+.hero .link-btn:hover .arrow {
+  transform: translateX(4px);
+}
