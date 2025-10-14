@@ -1,0 +1,240 @@
+/* prices layout */
+.prices {
+    margin-top: -1rem;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+@media (min-width: 1024px) {
+    .prices {
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* venstre sticky bilde på store skjermer */
+.prices-left {
+    position: relative;
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .prices-left {
+        display: block;
+        position: sticky;
+        top: 3rem;
+        height: calc(100vh - 3rem);
+    }
+}
+
+.prices-left-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% center;
+}
+
+.prices-left-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* Høyre innhold */
+.prices-right {
+    background: #F4EFE8;
+    grid-column: span 1 / span 1;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .prices-right {
+        grid-column: span 2 / span 2;
+    }
+}
+
+/* Header */
+.prices-header {
+    padding-inline: 1.5rem;
+    padding-top: 2rem;
+}
+
+@media (min-width: 640px) {
+    .prices-header {
+        padding-inline: 2.5rem;
+    }
+}
+
+.prices-title {
+    font-size: clamp(2.25rem, 3.5vw, 3rem);
+    color: #44403c;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.prices-subtitle {
+    color: #78716c;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+/* Main */
+.prices-main {
+    padding-inline: 1.5rem;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 640px) {
+    .prices-main {
+        padding-inline: 2.5rem;
+    }
+}
+
+/* SEKSJONSHEADERS*/
+.prices-sec-head {
+    margin-top: 2.5rem;
+}
+
+.prices-sec-head:first-child {
+    margin-top: 0;
+}
+
+.prices-sec-title {
+    font-family: var(--font-serif, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif);
+    font-size: 1.25rem;
+    color: #44403c;
+}
+
+.prices-sec-divider {
+    margin-top: 0.5rem;
+    height: 1px;
+    width: 100%;
+    background: rgba(168, 162, 158, 0.7);
+}
+
+/* rader med priser */
+
+.prices-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding-block: 0.75rem;
+}
+
+.prices-row-title {
+    color: #1f2937;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 13px;
+}
+
+.prices-row-dots {
+    border-bottom: 1px dotted rgba(214, 211, 209, 0.8);
+}
+
+.prices-row-price {
+    color: #57534e;
+    letter-spacing: 0.06em;
+    font-size: 13px;
+}
+
+/*Footnotes*/
+.prices-footnote {
+    font-size: 12px;
+    margin-top: 1rem;
+    letter-spacing: 0.2em;
+    color: #57534e;
+}
+
+/* kontakt linker*/
+.prices-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.icon-20 {
+    width: 20px;
+    height: 20px;
+}
+
+/* Kontaktskjema-knapp med underline-animasjon */
+.prices-cta {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.75rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #0c0a09;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.prices-cta::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    height: 1px;
+    width: 0;
+    background: #6b7280;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.prices-cta:hover {
+    color: #78716c;
+}
+
+.prices-cta:hover::after {
+    width: 70%;
+}
+
+/* Instagram + Telefon */
+.prices-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #44403c;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.prices-link:hover {
+    color: #78716c;
+}
+
+/* MOBIL/TABLET BUNN-BILDE*/
+.prices-bottom-image {
+    position: relative;
+    height: 16rem;
+    /* h-64 */
+}
+
+@media (min-width: 1024px) {
+    .prices-bottom-image {
+        display: none;
+    }
+}
+
+.prices-bottom-image-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

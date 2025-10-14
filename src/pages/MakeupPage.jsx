@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { makeupPhotos } from "../data/makeupPageImages";
-import "../styles/sections/gallery.css";
+import "../styles/pages/gallery.css";
 
 export default function MakeupPage() {
     document.title = "Makeup – Therese Hommedal";
