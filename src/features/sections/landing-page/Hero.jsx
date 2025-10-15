@@ -1,4 +1,3 @@
-import brideHome2 from "../../../assets/bride/brideHome2.jpeg";
 import { FaInstagram } from "react-icons/fa";
 
 export default function Hero() {
@@ -6,12 +5,13 @@ export default function Hero() {
 		<section id="hero" className="hero">
 			{/* Wrapper som tar full høyde minus header */}
 			<div className="hero-wrap">
-				{/* Bakgrunnsbilde i full bredde/høyde */}
+				{/* Bakgrunnsbilde i full bredde/høyde 
 				<img
 					src={brideHome2}
 					alt="Brud i bil, Therese Hommedal"
 					className="hero-bg"
 				/>
+				*/}
 
 				{/* Bunn-gradient for kontrast */}
 				<div className="hero-gradient" />
