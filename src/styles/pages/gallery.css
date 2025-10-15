@@ -4,8 +4,6 @@
 .gallery-section {
     position: relative;
     background: #7C6E64;
-    margin-top: -1rem;
-    /* -mt-4 */
     overflow: clip;
 }
 
