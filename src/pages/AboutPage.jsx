@@ -1,5 +1,5 @@
-import brideHeader from "../assets/about/brideTh3.avif";
-import brideCard from "../assets/about/brideTh2.avif";
+import brideHeader from "../assets/about/a1.avif";
+import brideCard from "../assets/about/a2.avif";
 import "../styles/pages/about.css";
 
 export default function AboutPage() {
