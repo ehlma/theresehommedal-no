@@ -1,5 +1,5 @@
-import brideHeader from "../assets/about/a1.avif";
-import brideCard from "../assets/about/a2.avif";
+import a1 from "../assets/about/a1.avif";
+import a2 from "../assets/about/a2.avif";
 import "../styles/pages/about.css";
 
 export default function AboutPage() {
@@ -10,7 +10,7 @@ export default function AboutPage() {
             {/* Masthead / hero */}
             <section className="about-hero">
                 <img
-                    src={brideHeader}
+                    src={a2}
                     alt="Therese Hommedal – portrett"
                     className="about-hero__img"
                     loading="eager"
@@ -60,7 +60,7 @@ export default function AboutPage() {
                     <figure className="about-fig">
                         <div className="about-fig__card">
                             <img
-                                src={brideCard}
+                                src={a1}
                                 alt="Behind the scenes – brud"
                                 className="about-fig__img"
                                 loading="lazy"

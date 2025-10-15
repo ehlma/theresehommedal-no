@@ -1,4 +1,4 @@
-import CollabPhoto from "../../../assets/collabs/6W5_PHzI.jpeg";
+import CollabPhoto from "../../../assets/collabs/g7.avif";
 
 export default function EditorialPanel() {
     return (
@@ -19,7 +19,7 @@ export default function EditorialPanel() {
                 {/* bilde i "maske" */}
                 <div className="">
                     <div className="rounded-[2.5rem] overflow-hidden ring-1 ring-black/5 shadow-sm">
-                        <img src={CollabPhoto} alt="Editorial makeup" className="w-full object-cover"/>
+                        <img src={CollabPhoto} alt="Editorial makeup" className="w-full object-cover" />
                     </div>
                 </div>
             </div>
