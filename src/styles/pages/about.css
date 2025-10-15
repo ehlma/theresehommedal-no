@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+:root {
+    --bg: #F3ECE4;
+    --ink: #3B2F2A;
+    --body: #262321;
+    --rail: #7C6E64;
+    --hair: #CDBBA7;
+    --line: #DCCFC2;
+}
+
+.about {
+    background: #fff;
+}
+
+/*  hero */
+.about-hero {
+    position: relative;
+}
+
+.about-hero__img {
+    width: 100%;
+    height: 48vh;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+@media (min-width:768px) {
+    .about-hero__img {
+        height: 56vh;
+    }
+}
+
+@media (min-width:1024px) {
+    .about-hero__img {
+        height: 64vh;
+    }
+}
+
+.about-hero__gradient {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    background: linear-gradient(to top, rgba(0, 0, 0, .45), transparent);
+}
+
+.about-hero__inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 2.5rem 1rem;
+}
+
+.about-hero__eyebrow {
+    color: #fff;
+    opacity: .9;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.about-hero__title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-top: .25rem;
+}
+
+/*  spread */
+.about-spread {
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+}
+
+.about-spread__wrap {
+    max-width: 1100px;
+    margin: auto;
+    padding: 3rem 1rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: start;
+}
+
+@media (max-width:900px) {
+    .about-spread__wrap {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* venstre tekst */
+.about-copy {
+    max-width: 48rem;
+}
+
+.about-copy__meta {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    margin-bottom: .5rem;
+}
+
+.about-copy__vtitle {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: var(--rail);
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.about-copy__rule {
+    flex: 1;
+    height: 1px;
+    background: var(--hair);
+    opacity: .8;
+}
+
+.about-copy__h {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    color: var(--ink);
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    line-height: 1.08;
+    margin: .25rem 0 0 0;
+}
+
+.about-copy__p {
+    color: var(--body);
+    line-height: 1.75;
+    margin-top: 1rem;
+    max-width: 62ch;
+}
+
+/* quote */
+.about-quote {
+    margin-top: 1.25rem;
+    padding-left: .85rem;
+    border-left: 1px solid var(--hair);
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    color: var(--ink);
+}
+
+.about-quote__cite {
+    display: block;
+    margin-top: .25rem;
+    font-size: .8rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--rail);
+}
+
+/* CTA-knapper */
+.about-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: .75rem;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .6rem 1.2rem;
+    font-size: .85rem;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    text-decoration: none;
+    transition: all .28s cubic-bezier(.2, .8, .2, 1);
+}
+
+.about-btn--dark {
+    background: var(--hair);
+    color: var(--ink);
+}
+
+.about-btn--dark:hover {
+    transform: translateY(-1px);
+    opacity: .92;
+}
+
+.about-btn--ghost {
+    border: 1px solid var(--hair);
+    color: var(--ink);
+}
+
+.about-btn--ghost:hover {
+    border-color: var(--rail);
+    color: var(--rail);
+}
+
+/* Høyre figur */
+.about-fig {
+    position: relative;
+}
+
+.about-fig__card {
+    position: relative;
+    width: min(420px, 92%);
+    margin-left: auto;
+    margin-right: 0;
+    background: #fff;
+    padding: .5rem;
+    border: 1px solid rgba(0, 0, 0, .08);
+    box-shadow: 0 30px 60px -24px rgba(0, 0, 0, .25);
+    transform: translateY(-1.25rem) rotate(2deg);
+}
+
+.about-fig__img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobil tweaks */
+@media (max-width:900px) {
+    .about-copy__vtitle {
+        display: none;
+    }
+
+    .about-fig__card {
+        margin: 0 auto;
+        transform: none;
+    }
+}
