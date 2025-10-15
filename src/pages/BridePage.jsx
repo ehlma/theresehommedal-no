@@ -1,25 +1,20 @@
-// src/pages/BridePage.jsx
-// Bilder – bruk gjerne flere/andre, men hold navnene i mappa som vist i skjermbildene dine
-import b0 from "../assets/bride/0.jpg";
-import b2 from "../assets/bride/5bebo0Wg.jpeg";
-import b3 from "../assets/bride/8.jpg";
-import b4 from "../assets/bride/brideHome1.jpg";
-import b5 from "../assets/bride/brideSnow.jpeg";
-import b6 from "../assets/bride/CoYoVg_w.jpeg";
-import b7 from "../assets/bride/IMG_5546.jpg";
-import b8 from "../assets/bride/IMG_7045.jpg";
-import b9 from "../assets/bride/IMG_9219.jpg";
-import b10 from "../assets/bride/IMG_9433.jpg";
-import b11 from "../assets/bride/IMG_9453.jpg";
-import b12 from "../assets/bride/IMG_9859.jpg";
+//brud makeup
+import b2 from "../assets/bride/b2.avif";
+import b4 from "../assets/bride/b4.avif";
+import b5 from "../assets/bride/b5.avif";
+import b6 from "../assets/bride/b6.avif";
+import b7 from "../assets/bride/b7.avif";
+import b8 from "../assets/bride/b8.avif";
+import b9 from "../assets/bride/b9.avif";
+import b10 from "../assets/bride/b10.avif";
 
 // Hår-galleri
-import h1 from "../assets/bride/hair/IMG_6050.jpg";
-import h2 from "../assets/bride/hair/IMG_6355.jpg";
-import h3 from "../assets/bride/hair/IMG_6821.jpg";
-import h4 from "../assets/bride/hair/IMG_7056.jpg";
-import h5 from "../assets/bride/hair/IMG_7061.jpg";
-import h6 from "../assets/bride/hair/IMG_8779.jpg";
+import h1 from "../assets/bride/hair/h1.avif";
+import h2 from "../assets/bride/hair/h2.avif";
+import h3 from "../assets/bride/hair/h3.avif";
+import h4 from "../assets/bride/hair/h4.avif";
+import h5 from "../assets/bride/hair/h5.avif";
+import h6 from "../assets/bride/hair/h6.avif";
 
 export default function BridePage() {
     document.title = "Brud – Therese Hommedal";

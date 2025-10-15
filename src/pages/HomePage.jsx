@@ -1,6 +1,4 @@
-import Hero from "../features/sections/landing-page/Hero.jsx"; 
-import Bride from "../features/sections/Bride.jsx";
-import Collab from "../features/sections/Collab.jsx";
+import Hero from "../features/sections/landing-page/Hero.jsx";
 // import ServiceCards from "src/features/sections/landing-page/ServiceCards.jsx";
 // import EditorialPanel from "src/features/sections/landing-page/EditorialPanel.jsx";
 // import ProcessSteps from "src/features/sections/landing-page/ProcessSteps.jsx";
@@ -21,11 +19,11 @@ export default function HomePage() {
       {/* <section id="makeup" className="min-h-[40vh]"></section>
       <section id="about" className="min-h-[40vh]"></section> */}
 
-      <ServiceCards/>
-      <EditorialPanel/>
-      <LogoRow/>
-      <ProcessSteps/>
-      <CallToAction/>
+      <ServiceCards />
+      <EditorialPanel />
+      <LogoRow />
+      <ProcessSteps />
+      <CallToAction />
     </>
   );
 }

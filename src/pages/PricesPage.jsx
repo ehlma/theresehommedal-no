@@ -1,5 +1,5 @@
 // src/pages/PricesPage.jsx
-import makeup12 from "../assets/bride/IMG_7045.jpg";
+import makeup12 from "../assets/bride/b8.avif";
 import { FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
 import "../styles/pages/prices.css";
 
