@@ -1,0 +1,80 @@
+/* =====================================
+   SERVICES – stort panel med tre kolonner
+   ===================================== */
+
+.services { background: var(--bg-default); }
+
+/* Panelet: stort “kort” med myk skygge og god radius */
+.services .services-panel--card {
+  border-radius: 24px;
+  background: #F7F3ED;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 8px 32px rgba(0,0,0,.06);
+}
+
+/* Tittel/ingress sentrert, med luft under */
+.services-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+  .services-header { margin-bottom: 2rem; }
+}
+
+/* Tre kolonner inni panelet */
+.services-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+@media (min-width: 768px) {
+  .services-columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: start;
+  }
+}
+
+/* Hver “mini-tjeneste” – ren og lett */
+.service-item {
+  text-align: center;
+  padding: .5rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Vertikale delestreker mellom kolonnene på md+ */
+@media (min-width: 768px) {
+  .service-item {
+    padding: 0 1.5rem;
+  }
+  .service-item + .service-item {
+    border-left: 1px solid var(--border-subtle);
+  }
+}
+
+/* Finpuss for lenken – arver animasjon fra .link-btn */
+.service-item .link-btn {
+  display: inline-flex;
+  align-self: center;
+  margin-top: 16px;
+}
+
+.service-item .heading-4 {
+    margin-bottom: -0.5rem;
+}
+.service-item .text-body {
+    margin-top: 0.25rem;
+}
+.service-item p {
+    margin-top: 0.25rem; /* Fallback for .text-body */
+}
+
+.services-icon {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
