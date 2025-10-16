@@ -1,17 +1,18 @@
 import { FaInstagram } from "react-icons/fa";
+import heroImage from "../../../assets/collabs/c5.avif";
 
 export default function Hero() {
 	return (
 		<section id="hero" className="hero">
 			{/* Wrapper som tar full høyde minus header */}
 			<div className="hero-wrap">
-				{/* Bakgrunnsbilde i full bredde/høyde 
+				{/* Bakgrunnsbilde i full bredde/høyde  */}
 				<img
-					src={brideHome2}
-					alt="Brud i bil, Therese Hommedal"
+					src={heroImage}
+					alt="Bilde av # for Costume"
 					className="hero-bg"
 				/>
-				*/}
+				
 
 				{/* Bunn-gradient for kontrast */}
 				<div className="hero-gradient" />
@@ -20,7 +21,7 @@ export default function Hero() {
 				<div className="hero-inner container-fluid flex items-end">
 					<div className="hero-col">
 						<div className="hero-row">
-							<div className="flex-1">
+							<div className="hero flex-1">
 								<h1 className="heading-hero font-playfair">
 									Therese Hommedal
 								</h1>
