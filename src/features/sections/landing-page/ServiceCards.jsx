@@ -1,6 +1,4 @@
-import brideImg from "@/assets/bride/brideHome2.jpeg";
-import eventImg from "@/assets/bride/brideHome2.jpeg"; // TODO: bytt til eget event-bilde
-import shootImg from "@/assets/bride/brideHome2.jpeg"; // TODO: bytt til eget photoshoot-bilde
+
 
 // src/features/sections/landing-page/ServiceCards.jsx
 export default function ServiceCards() {
