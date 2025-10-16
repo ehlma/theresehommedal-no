@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
 @import "tailwindcss";
 @import "./styles/sections/hero.css";
+@import "./styles/sections/services.css";
 
 /* DESIGN TOKENS */
 :root {
   /* backgrounds */
-  --bg-default: #fff;
+  --bg-default: #eee6da;
   --bg-light: #f8f6f3;
   --surface: var(--bg-default);
   --surface-muted: var(--bg-light);
@@ -48,6 +49,7 @@ body {
 }
 .heading-2 { @apply text-3xl md:text-4xl text-neutral-900; }
 .heading-3 { @apply text-xl md:text-2xl text-neutral-900; }
+.heading-4 { @apply text-lg md:text-xl text-neutral-900 leading-tight; }
 
 .text-body { @apply text-[16px] md:text-base leading-relaxed; color: var(--text-secondary); }
 
