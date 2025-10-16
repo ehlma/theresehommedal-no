@@ -1,0 +1,292 @@
+/* =========================
+CONTACT – VARS
+========================= */
+:root {
+    --card-top: 20vh;
+    --face-focus: 70% 10%;
+    --ink: #3B2F2A;
+    --muted: #7C6E64;
+}
+
+/* Side-wrapper får egen stacking context */
+.contact {
+    position: relative;
+    z-index: 0;
+    margin-top: -8rem;
+    background: transparent;
+}
+
+/* =========================
+  BAKGRUNNSBILDE (FIXED/STICKY)
+  ========================= */
+.contact-hero {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.contact-hero-img {
+    position: absolute;
+    inset: 0;
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: var(--face-focus);
+    filter: contrast(1.05) saturate(1.03);
+}
+
+.contact-hero-gradient {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.46), transparent);
+    pointer-events: none;
+}
+
+/* =========================
+  SCENE OPPÅ BILDET (kun skjema scroller)
+  ========================= */
+.contact-stage {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-center {
+    padding-top: var(--card-top);
+    padding-inline: 1rem;
+    padding-bottom: 4rem;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    background: transparent;
+}
+
+/* =========================
+  KORTET
+  ========================= */
+.contact-card {
+    width: 100%;
+    max-width: 760px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 0, 0, .06);
+    border-radius: 1rem;
+    box-shadow: 0 25px 60px -25px rgba(0, 0, 0, .35);
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.contact-card-head {
+    text-align: center;
+}
+
+.contact-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .22em;
+    font-size: .75rem;
+    color: var(--muted);
+}
+
+.contact-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: clamp(1.8rem, 4.8vw, 2.4rem);
+    line-height: 1.1;
+    margin-top: .25rem;
+}
+
+.contact-dek {
+    color: #4a4745;
+    margin-top: .5rem;
+}
+
+/* =========================
+  SKJEMA – 2-KOLONNERS GRID
+  ========================= */
+.contact-form {
+    margin-top: 1.25rem;
+    max-width: 42rem;
+}
+
+.contact-stack>*+* {
+    margin-top: 1rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    /* mobil: 1 kolonne */
+    gap: 0.75rem;
+}
+
+/* Grid-områder på desktop */
+@media (min-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "name     email"
+            "address  subject"
+            "service  message"
+            "contact  message";
+        align-items: start;
+    }
+
+    .field-name {
+        grid-area: name;
+    }
+
+    .field-email {
+        grid-area: email;
+    }
+
+    .field-address {
+        grid-area: address;
+    }
+
+    .field-service {
+        grid-area: service;
+    }
+
+    .field-contactref {
+        grid-area: contact;
+    }
+
+    .field-subject {
+        grid-area: subject;
+    }
+
+    .field-message {
+        grid-area: message;
+        min-height: 14rem;
+    }
+}
+
+/* =========================
+  INPUTS / TEXTAREA
+  ========================= */
+.contact-input {
+    width: 100%;
+    border-radius: 9999px;
+    border: 1px solid #e5e5e5;
+    /* litt lysere for glass-look */
+    padding: 0.625rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #171717;
+    outline: none;
+    transition: box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+}
+
+.contact-input::placeholder {
+    color: #a3a3a3;
+}
+
+.contact-input:focus {
+    box-shadow: 0 0 0 2px rgba(23, 23, 23, 0.1);
+    border-color: #cfcfcf;
+    background: #fff;
+}
+
+.contact-textarea {
+    width: 100%;
+    border-radius: 2rem;
+    border: 1px solid #e5e5e5;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #171717;
+    outline: none;
+    transition: box-shadow .2s ease, border-color .2s ease, background-color .2s ease;
+    resize: vertical;
+    min-height: 10rem;
+    /* mobil baseline, desktop overstyres av grid */
+}
+
+.contact-textarea::placeholder {
+    color: #a3a3a3;
+}
+
+.contact-textarea:focus {
+    box-shadow: 0 0 0 2px rgba(23, 23, 23, 0.1);
+    border-color: #cfcfcf;
+    background: #fff;
+}
+
+/* honeypot */
+.contact-honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+/* =========================
+  KNAPP + STATES
+  ========================= */
+.contact-btn {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    border: 1px solid #0a0a0a;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: #0a0a0a;
+    background: transparent;
+    transition: color .25s ease, background-color .25s ease, opacity .2s ease, transform .2s ease;
+}
+
+.contact-btn:hover {
+    background: #0a0a0a;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.contact-btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* hint/dev/status */
+.contact-hint {
+    font-size: .875rem;
+    color: #6b7280;
+}
+
+.contact-dev {
+    font-size: .75rem;
+    color: #6b7280;
+}
+
+.contact-dev>*+* {
+    margin-top: .25rem;
+}
+
+.contact-status {
+    margin-top: .5rem;
+    font-size: .95rem;
+}
+
+.contact-status--ok {
+    color: #16a34a;
+}
+
+.contact-status--err {
+    color: #dc2626;
+}
+
+/* =========================
+  RESPONSIVE FINJUSTERING
+  ========================= */
+@media (max-width: 640px) {
+    :root {
+        --card-top: 38vh;
+        /* litt høyere opp på mobil */
+        --face-focus: 50% 28%;
+    }
+
+    .contact-card {
+        border-radius: .75rem;
+    }
+}

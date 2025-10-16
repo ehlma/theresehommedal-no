@@ -1,4 +1,4 @@
-import CollabPhoto from "../../../assets/collabs/g7.avif";
+import CollabPhoto from "../../../assets/collabs/c7.avif";
 
 export default function EditorialPanel() {
     return (
