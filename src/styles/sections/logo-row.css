@@ -1,0 +1,86 @@
+/* =========================
+LOGO ROW STYLING
+========================= */
+
+.logo-row {
+    position: relative;
+    background: var(--bg-default);
+    padding-block: 1rem;
+    overflow: hidden;
+    margin-bottom: 6rem;
+}
+
+.logo-row__title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-inter, 'Inter', sans-serif);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.logo-row__viewport {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.logo-row__track {
+    display: flex;
+    /* align-items: center; */
+    /* gap: 3em; */
+    flex-wrap: nowrap;
+    align-items: center;
+    width: max-content;
+    animation: logo-scroll 5s linear infinite; /* Rask animasjon for redigering */
+}
+
+.logo-row:hover .logo-row__track {
+    animation-play-state: paused;
+}
+
+.logo-row__group {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 3.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.logo-row__item {
+    flex: 0 0 auto;
+    padding-inline: 1rem;
+}
+
+.logo-row__img {
+    display: block;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(0.6);
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+@media (min-width: 768px) {
+    .logo-row__img {
+        height: 36px;
+    }
+}
+
+.logo-row__img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+}
+
+@keyframes logo-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
