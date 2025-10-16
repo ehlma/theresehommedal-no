@@ -13,15 +13,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      {/* <Bride />
-      <Collab /> */}
-      {/* flere seksjoner */}
-      {/* <section id="makeup" className="min-h-[40vh]"></section>
-      <section id="about" className="min-h-[40vh]"></section> */}
-
       <ServiceCards />
-      <EditorialPanel />
       <LogoRow />
+      <EditorialPanel />
+      
       <ProcessSteps />
       <CallToAction />
     </>
