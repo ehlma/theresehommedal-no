@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
+import { FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
 import "../../styles/pages/contact.css";
-import c1 from "../../assets/gallery/g12.avif";
+import c1 from "../../assets/gallery/g5.avif";
 
 export default function ContactForm() {
     const [token, setToken] = useState(null);
@@ -61,86 +62,63 @@ export default function ContactForm() {
 
     return (
         <div className="contact">
-            {/* Sticky bakgrunnsbilde bak alt innhold */}
-            <div className="contact-hero">
-                <img
-                    src={c1} // din bildefil
-                    alt="Editorial makeup – bakgrunn"
-                    className="contact-hero-img"
-                    loading="eager"
-                    decoding="async"
-                />
-                <div className="contact-hero-gradient" />
-            </div>
-
-            {/* Scene oppå bildet – kun skjema scroller */}
-            <section className="contact-stage">
-                <div className="contact-center">
-                    <div className="contact-card">
-                        <header className="contact-card-head">
-                            <p className="contact-eyebrow">Kontakt</p>
-                            <h1 className="contact-title">Inquire Here</h1>
-                            <p className="contact-dek">
-                                Fyll ut skjemaet så kommer jeg tilbake til deg innen 24&nbsp;timer.
+            {/* Mørk brun “canvas” */}
+            <section className="contact-canvas">
+                {/* Hvitt sentrert panel */}
+                <div className="contact-panel">
+                    {/* Topp-rutenett: venstre tittel / høyre info-kolonner */}
+                    <div className="contact-head">
+                        {/* Venstre: tittel og intro */}
+                        <div className="contact-hero-copy">
+                            <h1 className="contact-h1">Kontakt</h1>
+                            <p className="contact-intro">
+                                Send meg en melding for alle henvendelser og spørsmål.
                             </p>
-                        </header>
+                        </div>
 
-                        {/* SKJEMA */}
-                        <form
-                            onSubmit={handleSubmit}
-                            onFocus={handleFormFocus}
-                            className="contact-form contact-stack"
-                            aria-busy={sending}
-                            aria-live="polite"
-                        >
-                            {/* Grid som lager 2 kolonner på md+ */}
-                            <div className="contact-grid">
-                                {/* Topp-rad */}
-                                <input
-                                    name="name"
-                                    type="text"
-                                    required
-                                    placeholder="Navn"
-                                    autoComplete="name"
-                                    className="contact-input field-name"
-                                />
-                                <input
-                                    name="email"
-                                    type="email"
-                                    required
-                                    placeholder="E-post"
-                                    autoComplete="email"
-                                    className="contact-input field-email"
-                                />
+                        {/* Høyre: kontaktinfo i to kolonner */}
+                        <div className="contact-info">
+                            <div className="contact-socials">
+                                <a href="/makeup">Galleri</a>
+                                <a href="/prices">Priser</a>
+                                <a href="https://www.instagram.com/theresehommedal/" target="_blank" rel="noopener noreferrer">
+                                    <FaInstagram className="icon-20" />
+                                    @theresehommedal
+                                </a>
+                                <a href="tel:+4792402601">
+                                    <FaPhone className="icon-20" />
+                                    <span>+47 92 40 26 01</span>
+                                </a>
+                            </div>
 
-                                {/* Høyre kolonne under e-post: Emne + Melding */}
-                                <input
-                                    name="subject"
-                                    type="text"
-                                    placeholder="Emne"
-                                    className="contact-input field-subject"
-                                />
-                                <textarea
-                                    name="message"
-                                    rows={8}
-                                    required
-                                    minLength={10}
-                                    placeholder="Melding"
-                                    className="contact-textarea field-message"
-                                />
 
-                                {/* Venstre kolonne under navn: Adresse, Tjeneste, Instagram/telefon */}
-                                <input
-                                    name="address"
-                                    type="text"
-                                    placeholder="Adresse (valgfritt)"
-                                    className="contact-input field-address"
-                                />
-                                <select
-                                    name="service"
-                                    defaultValue=""
-                                    className="contact-input field-service"
-                                >
+                        </div>
+                    </div>
+
+                    {/* Separator */}
+                    <hr className="contact-sep" />
+
+                    {/* Skjema */}
+                    <form
+                        onSubmit={handleSubmit}
+                        onFocus={handleFormFocus}
+                        className="contact-form"
+                        aria-busy={sending}
+                        aria-live="polite"
+                    >
+                        <div className="form-two-col">
+                            <div className="form-col">
+                                <input name="name" type="text" required placeholder="Navn" autoComplete="name" className="contact-input field-name" />
+                                <input name="email" type="email" required placeholder="E-post" autoComplete="email" className="contact-input field-email" />
+                                <input name="address" type="text" placeholder="Adresse (valgfritt)" className="contact-input field-address" />
+                                <input name="contactRef" type="text" placeholder="Instagram / telefon (valgfritt)" className="contact-input field-contactref" />
+                                <div className="contact-media">
+                                    <img src={c1} alt="Editorial mood" />
+                                </div>
+                            </div>
+                            <div className="form-col">
+                                <input name="subject" type="text" placeholder="Emne" className="contact-input field-subject" />
+                                <select name="service" defaultValue="" className="contact-input field-service">
                                     <option value="" disabled>Hvilken tjeneste er du interessert i?</option>
                                     <option value="brud">Brud</option>
                                     <option value="makeup">Makeup</option>
@@ -148,61 +126,48 @@ export default function ContactForm() {
                                     <option value="samarbeid">Samarbeid</option>
                                     <option value="annet">Annet</option>
                                 </select>
-                                <input
-                                    name="contactRef"
-                                    type="text"
-                                    placeholder="Instagram / telefon (valgfritt)"
-                                    className="contact-input field-contactref"
-                                />
-                            </div>
+                                <textarea name="message" rows={8} required minLength={10} placeholder="Melding" className="contact-textarea field-message" />
 
-                            {/* honeypot (skjult for mennesker) */}
-                            <div aria-hidden="true" className="contact-honeypot">
-                                <label>Company</label>
-                                <input name="company" type="text" tabIndex={-1} autoComplete="off" />
-                            </div>
 
-                            {/* turnstile */}
-                            <Turnstile
-                                siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-                                onSuccess={(tok) => setToken(tok)}
-                                onExpire={() => setToken(null)}
-                                onError={() => setToken(null)}
-                                options={{ appearance: "interaction-only" }}
-                            />
-
-                            <button
-                                type="submit"
-                                disabled={sending || !token}
-                                onClick={() => debug('button clicked')}
-                                className="contact-btn"
-                            >
-                                {sending ? "Sender..." : "Send"}
-                            </button>
-
-                            {(!token && !sending) && (
-                                <p className="contact-hint">Løs CAPTCHA først.</p>
-                            )}
-
-                            {import.meta.env.DEV && (
-                                <div className="contact-dev">
-                                    <div>DEV · token present: {String(!!token)}</div>
-                                    <div>DEV · button disabled: {String(sending || !token)}</div>
-                                    <div>DEV · site key: {String(import.meta.env.VITE_TURNSTILE_SITE_KEY || 'Mangler')}</div>
+                                {/* honeypot */}
+                                <div aria-hidden="true" className="contact-honeypot">
+                                    <label>Company</label>
+                                    <input name="company" type="text" tabIndex={-1} autoComplete="off" />
                                 </div>
-                            )}
 
-                            {result && (
-                                <p
-                                    role="status"
-                                    aria-live="polite"
-                                    className={result.ok ? "contact-status contact-status--ok" : "contact-status contact-status--err"}
-                                >
-                                    {result.msg}
-                                </p>
-                            )}
-                        </form>
-                    </div>
+                                <Turnstile
+                                    siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
+                                    onSuccess={(tok) => setToken(tok)}
+                                    onExpire={() => setToken(null)}
+                                    onError={() => setToken(null)}
+                                    options={{ appearance: "interaction-only" }}
+                                />
+
+                                <button type="submit" disabled={sending || !token} onClick={() => debug('button clicked')} className="contact-btn">
+                                    {sending ? "Sender..." : "Send"}
+                                </button>
+
+                                {(!token && !sending) && <p className="contact-hint">Løs CAPTCHA først.</p>}
+
+                                {import.meta.env.DEV && (
+                                    <div className="contact-dev">
+                                        <div>DEV · token present: {String(!!token)}</div>
+                                        <div>DEV · button disabled: {String(sending || !token)}</div>
+                                        <div>DEV · site key: {String(import.meta.env.VITE_TURNSTILE_SITE_KEY || 'Mangler')}</div>
+                                    </div>
+                                )}
+
+                                {result && (
+                                    <p role="status" aria-live="polite" className={result.ok ? "contact-status contact-status--ok" : "contact-status contact-status--err"}>
+                                        {result.msg}
+                                    </p>
+                                )}
+
+                            </div>
+
+                        </div>
+                    </form>
+
                 </div>
             </section>
         </div>
