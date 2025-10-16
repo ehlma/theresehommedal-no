@@ -3,7 +3,7 @@ HERO SECTION STYLING
 ========================= */
 .hero {
   position: relative;
-  background: var(--surface-muted);
+  /* background: var(--surface-muted); */
   overflow: hidden;
 }
 
@@ -70,17 +70,17 @@ HERO SECTION STYLING
 
 /* typografi og spacing */
 .hero h1.heading-hero {
-  color: var(--text-primary);
+  color: var(--text-light);
 }
 
 .hero .eyebrow {
-  color: var(--text-primary);
+  color: var(--text-light);
   opacity: 0.85;
 }
 
 /* link-knapp */
 .hero .link-btn {
-  color: var(--text-primary);
+  color: var(--text-light);
   font-weight: 500;
   letter-spacing: 0.16em;
 }
