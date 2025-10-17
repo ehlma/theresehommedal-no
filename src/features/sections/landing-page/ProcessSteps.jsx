@@ -16,6 +16,8 @@ export default function ProcessSteps() {
                         Slik jobber vi - steg for steg
                     </h2>
                 </header>
+                
+
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {steps.map((s, i) => (

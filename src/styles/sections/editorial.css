@@ -1,0 +1,93 @@
+/* =========================
+EDITORIAL PANEL
+- 2 rader i 2 spaltet layout på desktop
+- tekst + bilde 
+========================= */
+
+.editorial {
+    background: var(--bg-default);
+    padding-block: 4rem;
+}
+@media (min-width: 768px) {
+    .editorial {padding-block: 5rem;}
+}
+
+.editorial .container-fluid {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* RADER */
+.editorial__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+@media (min-width: 920px) {
+    .editorial__row {
+        grid-template-columns: 1.1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+}
+@media (min-width: 920px) {
+    .editorial__row--reverse {
+        grid-template-columns: 1fr 1.1fr;
+    }
+}
+
+/* TEKST */
+.editorial__text {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.editorial .eyebrow {
+    color: var(--text-secondary);
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.editorial .body-text {
+    color: var(--text-secondary);
+}
+
+.editorial .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* MEDIA */
+.editorial__media {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-sublte);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.editorial__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shape-a {
+    border-radius: 2rem 0rem 0rem 2rem;
+    aspect-ratio: 4 / 3;
+}
+
+.shape-b {
+    border-radius: 0rem 2rem 2em 0rem;
+    aspect-ratio: 4 / 3;
+}
+
+@media (max-width: 480px) {
+    .shape-a, .shape-b {aspect-ratio: 3/4;}
+}
