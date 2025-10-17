@@ -1,27 +1,24 @@
-/* ============ CANVAS (mørk brun bakgrunn) ============ */
 .contact {
     margin-top: -2rem;
 }
 
 .contact-canvas {
-    background: #3F362F;
-    /* varm mørk brun */
+    background: var(--surface-muted);
     min-height: calc(100svh - 3rem);
-    /* under header */
-    padding: 2rem 1rem;
     display: grid;
     place-items: center;
 }
 
-/* ============ PANEL (hvitt kort) ============ */
+/*  kontaktpanelet */
 .contact-panel {
     width: 100%;
+    height: 100vh;
     max-width: 1080px;
-    background: #fff;
-    border-radius: 1.25rem;
-    box-shadow: 0 25px 70px -30px rgba(0, 0, 0, .35);
-    padding: clamp(1rem, 3vw, 2rem);
-    border: 1px solid rgba(0, 0, 0, .06);
+    background: var(--surface);
+    box-shadow:
+        24px 0 48px -24px rgba(0, 0, 0, .30),
+        -24px 0 48px -24px rgba(0, 0, 0, .30);
+    border: 1px solid var(--border-subtle);
 }
 
 /* Topp-rutenett */
@@ -30,6 +27,10 @@
     grid-template-columns: 0.9fr 1.1fr;
     gap: clamp(1rem, 3vw, 2rem);
     align-items: start;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 @media (max-width: 900px) {
@@ -39,19 +40,21 @@
 }
 
 /* Venstre tittel/intro */
+.contact-hero-copy {
+    margin-left: 0.5rem;
+}
+
 .contact-h1 {
     font-family: "Playfair Display", serif;
     font-weight: 600;
     font-size: clamp(2rem, 4.5vw, 3rem);
     line-height: 1.05;
-    color: #1f2937;
-    /* slate-800-ish */
+    color: var(--text-primary);
     margin: 0 0 .5rem 0;
 }
 
 .contact-intro {
-    color: #4b5563;
-    /* gray-600 */
+    color: var(--text-secondary);
     max-width: 32ch;
 }
 
@@ -76,28 +79,25 @@
     text-transform: uppercase;
     letter-spacing: .18em;
     font-size: .75rem;
-    color: #9ca3af;
-    /* gray-400 */
+    color: var(--text-secondary);
     margin-top: .25rem;
 }
 
 .info-link {
-    color: #111827;
+    color: var(--text-primary);
     text-decoration: none;
     transition: color .2s ease;
 }
 
 .info-link:hover {
-    color: #7C6E64;
+    color: var(--accent);
 }
 
 .info-address {
-    color: #374151;
+    color: var(--text-secondary);
 }
 
 /* Media-blokk nederst høyre (som i referansen) */
-.contact-media {}
-
 .contact-media img {
     grid-column: 2 / 3;
     width: 100%;
@@ -117,15 +117,7 @@
     }
 }
 
-/* Tynn separator */
-.contact-sep {
-    border: 0;
-    height: 1px;
-    background: #eee;
-    margin: 1.25rem 0;
-}
-
-/* ============ SKJEMA (gjenbruker dine klasser) ============ */
+/*  skjema  */
 .contact-form {
     max-width: 900px;
     margin-inline: auto;
@@ -159,59 +151,62 @@
 }
 
 /* Inputs/textarea/btn – behold fra tidligere (de passer stilen) */
-.contact-input {
-    width: 100%;
-    border-radius: 9999px;
-    border: 1px solid #e5e5e5;
-    padding: .625rem 1rem;
-    background: #fff;
-    color: #171717;
-    transition: box-shadow .2s ease, border-color .2s ease;
+.contact-textarea {
+    min-height: 8rem;
+    resize: vertical;
 }
 
-.contact-input::placeholder {
-    color: #a3a3a3;
-}
-
-.contact-input:focus {
-    box-shadow: 0 0 0 2px rgba(23, 23, 23, .1);
-    border-color: #cfcfcf;
-}
-
+.contact-input,
 .contact-textarea {
     width: 100%;
-    border-radius: 2rem;
-    border: 1px solid #e5e5e5;
-    padding: .75rem 1rem;
-    background: #fff;
-    color: #171717;
-    resize: vertical;
-    transition: box-shadow .2s ease, border-color .2s ease;
+    background: transparent;
+    border: none;
+    border-bottom: 1.6px solid var(--border-subtle);
+    border-radius: 0;
+    padding: .6rem .25rem .5rem 0;
+    color: var(--text-primary);
+    outline: none;
+    transition: border-color .2s ease, background-color .2s ease;
 }
 
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+.contact-input:focus,
 .contact-textarea:focus {
-    box-shadow: 0 0 0 2px rgba(23, 23, 23, .1);
-    border-color: #cfcfcf;
+    border-bottom-color: var(--text-primary);
+    background-color: transparent;
+    box-shadow: none;
 }
 
 .contact-btn {
     display: inline-flex;
     align-items: center;
     border-radius: 9999px;
-    border: 1px solid #0a0a0a;
+    border: 1px solid var(--text-primary);
     padding: .5rem 1.25rem;
     font-size: .875rem;
     text-transform: uppercase;
     letter-spacing: .02em;
-    color: #0a0a0a;
+    color: var(--text-primary);
     background: transparent;
     transition: color .25s, background-color .25s, transform .2s;
 }
 
+select.contact-input {
+    padding-right: 1.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
 .contact-btn:hover {
-    background: #0a0a0a;
+    background: var(--text-primary);
     color: #fff;
     transform: translateY(-1px);
+    cursor: pointer;
 }
 
 .contact-honeypot {
@@ -256,20 +251,23 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(160px, 1fr));
     gap: 8px 16px;
-    justify-items: end;
-    color: #111827;
+    justify-items: start;
+    margin-left: 2rem;
 }
 
 .contact-socials a {
     display: inline-flex;
     align-items: center;
+    text-decoration: underline;
+    color: var(--text-primary);
     gap: 8px;
-    line-height: 1.2;
-    padding: 2px 0;
+    line-height: 1.8;
+    padding: 4px 0;
 }
 
 .contact-socials a:hover {
-    color: #7C6E64;
+    color: var(--accent);
+    text-decoration: none;
 }
 
 .icon-20 {

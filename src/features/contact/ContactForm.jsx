@@ -62,7 +62,7 @@ export default function ContactForm() {
 
     return (
         <div className="contact">
-            {/* Mørk brun “canvas” */}
+            {/* Mørk brun bakgrunn */}
             <section className="contact-canvas">
                 {/* Hvitt sentrert panel */}
                 <div className="contact-panel">
@@ -70,21 +70,22 @@ export default function ContactForm() {
                     <div className="contact-head">
                         {/* Venstre: tittel og intro */}
                         <div className="contact-hero-copy">
-                            <h1 className="contact-h1">Kontakt</h1>
+                            <h1 className="contact-h1">Kontakt.</h1>
                             <p className="contact-intro">
-                                Send meg en melding for alle henvendelser og spørsmål.
+                                Har du noen spørsmål? Fyll ut kontaktskjemaet så kommer jeg tilbake til deg så fort som mulig.
                             </p>
                         </div>
 
                         {/* Høyre: kontaktinfo i to kolonner */}
                         <div className="contact-info">
                             <div className="contact-socials">
-                                <a href="/makeup">Galleri</a>
-                                <a href="/prices">Priser</a>
+                                <a href="/prices">Se priser</a>
+
                                 <a href="https://www.instagram.com/theresehommedal/" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram className="icon-20" />
                                     @theresehommedal
                                 </a>
+                                <a href="/makeup">Se min portofølje</a>
                                 <a href="tel:+4792402601">
                                     <FaPhone className="icon-20" />
                                     <span>+47 92 40 26 01</span>
@@ -94,10 +95,6 @@ export default function ContactForm() {
 
                         </div>
                     </div>
-
-                    {/* Separator */}
-                    <hr className="contact-sep" />
-
                     {/* Skjema */}
                     <form
                         onSubmit={handleSubmit}
@@ -108,16 +105,16 @@ export default function ContactForm() {
                     >
                         <div className="form-two-col">
                             <div className="form-col">
-                                <input name="name" type="text" required placeholder="Navn" autoComplete="name" className="contact-input field-name" />
-                                <input name="email" type="email" required placeholder="E-post" autoComplete="email" className="contact-input field-email" />
-                                <input name="address" type="text" placeholder="Adresse (valgfritt)" className="contact-input field-address" />
-                                <input name="contactRef" type="text" placeholder="Instagram / telefon (valgfritt)" className="contact-input field-contactref" />
+                                <input name="name" type="text" required placeholder="Navn*" autoComplete="name" className="contact-input field-name" />
+                                <input name="email" type="email" required placeholder="E-post*" autoComplete="email" className="contact-input field-email" />
+                                <input name="address" type="text" placeholder="Adresse" className="contact-input field-address" />
+                                <input name="contactRef" type="text" placeholder="Instagram / Telefon " className="contact-input field-contactref" />
                                 <div className="contact-media">
                                     <img src={c1} alt="Editorial mood" />
                                 </div>
                             </div>
                             <div className="form-col">
-                                <input name="subject" type="text" placeholder="Emne" className="contact-input field-subject" />
+                                <input name="subject" type="text" placeholder="Emne*" className="contact-input field-subject" />
                                 <select name="service" defaultValue="" className="contact-input field-service">
                                     <option value="" disabled>Hvilken tjeneste er du interessert i?</option>
                                     <option value="brud">Brud</option>
@@ -142,6 +139,10 @@ export default function ContactForm() {
                                     onError={() => setToken(null)}
                                     options={{ appearance: "interaction-only" }}
                                 />
+
+                                <p className="contact-dev">
+                                    * For andre og større samarbeid, ta kontakt med @lindawickmann ved @lwagency.
+                                </p>
 
                                 <button type="submit" disabled={sending || !token} onClick={() => debug('button clicked')} className="contact-btn">
                                     {sending ? "Sender..." : "Send"}
