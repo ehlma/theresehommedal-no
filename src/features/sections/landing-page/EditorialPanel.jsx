@@ -1,5 +1,6 @@
 import EditorialA from "../../../assets/bride/b4.avif";
 import EditorialB from "../../../assets/collabs/c7.avif";
+import LogoRow from "./LogoRow";
 
 import "@/styles/sections/editorial.css";
 
@@ -25,7 +26,7 @@ export default function EditorialPanel() {
                     </div>
                 </div>
                 
-
+                {/* <LogoRow/> */}
 
                 {/* bilde i "maske" */}
                 <div className="editorial__row editorial__row-reverse">

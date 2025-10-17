@@ -1,3 +1,6 @@
+import "@/styles/sections/process.css"
+import "@/index.css"
+
 const steps = [
     {title: "Forespørsel", text: "Sjekk dato, sted og behov. Du får raskt svar."},
     {title: "Prøve", text: "Vi tester looken og finjusterer til den sitter perfekt."},
@@ -6,28 +9,30 @@ const steps = [
 
 export default function ProcessSteps() {
     return (
-        <section>
-            <div>
-                <header className="text-center">
-                    <p>
-                        Prosess
-                    </p>
-                    <h2>
-                        Slik jobber vi - steg for steg
-                    </h2>
+        <section className="process">
+            <div className="container-fluid">
+                <header className="process-header">
+                    <p className="eyebrow">Prosess</p>
+                    <h2 className="heading-2">Slik jobber jeg - steg for steg</h2>
                 </header>
-                
 
+                <div className="timeline">
+                    <ul className="timeline__list">
+                        {steps.map((s, i) => (
+                            <li className="timeline__item" key={s.title}>
+                                <span className="timeline__node">
+                                    <span className="timeline__num">
+                                        {String(i + 1).padStart(2, "0")}
+                                    </span>
+                                </span>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-                    {steps.map((s, i) => (
-                        <div key={s.title} className="rounded-2xl ring-1 ring-black/5 bg-white">
-                            <div>
-                                <h3>{s.title}</h3>
-                                <p>{s.text}</p>
-                            </div>
-                        </div>
-                    ))}
+                                <div className="timeline__card">
+                                    <h3 className="heading-4">{s.title}</h3>
+                                    <p className="text-body">{s.text}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </section>
