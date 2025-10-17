@@ -1,0 +1,127 @@
+/* =========================
+PROCESS STEPS / TIMELINE
+- veritkal på mobil, horisontal på desktop
+========================= */
+
+.process {
+    background: var(--bg-default);
+    padding-block: 4rem;
+}
+@media (min-width: 768px) {
+    .process {
+        padding-bottom: 5rem;
+    }
+}
+
+.process .container-fluid {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.process-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .process-header {
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* TIMELINE */
+.timeline {
+    position: relative;
+    padding-left: 36px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 18px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-subtle);
+}
+
+.timeline__list {
+    list-style: none;
+    padding: 4px;
+    margin: 4px;
+    display: grid;
+    gap: 1.75rem;
+}
+
+.timeline__item {
+    position: relative;
+    padding-left: 60px;
+}
+
+.timeline__node {
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 9999px;
+    background: var(--border-subtle);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    display: grid;
+    place-items: center;
+}
+
+.timeline__num {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--text-primary);
+}
+
+.timeline__card {
+    margin-left: 0;
+    background: var(--bg-light);
+    /* border: 1px solid var(--border-subtle); */
+    border-radius: 1.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    padding: 1rem 1.25rem;
+}
+
+/* TIMELINE - desktop */
+@media (min-width: 920px) {
+    .timeline {
+        padding-left: 0;
+        padding-top: 36px;
+    }
+
+    .timeline::before {
+        left: 0;
+        right: 0;
+        top: 18px;
+        bottom: auto;
+        height: 2px;
+        width: auto;
+    }
+
+    .timeline__list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    .timeline__item {
+        text-align: center;
+    }
+
+    .timeline__node {
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    .timeline__card {
+        margin-top: 28px;
+        padding: 1.25rem 1.5rem;
+    }
+    
+}

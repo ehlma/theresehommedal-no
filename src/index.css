@@ -3,6 +3,7 @@
 @import "./styles/sections/hero.css";
 @import "./styles/sections/services.css";
 @import "./styles/sections/logo-row.css";
+@import "./styles/sections/process.css";
 
 /* DESIGN TOKENS */
 :root {
