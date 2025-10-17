@@ -8,11 +8,11 @@ import woodling from "@/assets/logos/woodling.png";
 
 export default function LogoRow() {
   const logos = [
-    { name: "Costume", src: costume },
     { name: "Fenja", src: fenja },
-    { name: "Johaug", src: johaug },
-    { name: "Linda", src: linda },
     { name: "Oslo Runway", src: oslorunway },
+    { name: "Johaug", src: johaug },
+    { name: "Costume", src: costume },
+    { name: "Linda", src: linda },
     { name: "Woodling", src: woodling },
   ];
 

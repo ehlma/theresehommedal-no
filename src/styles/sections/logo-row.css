@@ -28,12 +28,10 @@ LOGO ROW STYLING
 
 .logo-row__track {
     display: flex;
-    /* align-items: center; */
-    /* gap: 3em; */
     flex-wrap: nowrap;
     align-items: center;
     width: max-content;
-    animation: logo-scroll 5s linear infinite; /* Rask animasjon for redigering */
+    animation: logo-scroll 35s linear infinite; /* Rask animasjon for redigering */
 }
 
 .logo-row:hover .logo-row__track {
@@ -49,6 +47,11 @@ LOGO ROW STYLING
     padding: 0;
     list-style: none;
 }
+@media (max-width: 640px) {
+    .logo-row__group {
+        gap: 2rem;
+    }
+}
 
 .logo-row__item {
     flex: 0 0 auto;
@@ -57,7 +60,7 @@ LOGO ROW STYLING
 
 .logo-row__img {
     display: block;
-    height: 32px;
+    height: 20px;
     width: auto;
     object-fit: contain;
     filter: grayscale(100%) brightness(0.6);
@@ -66,13 +69,22 @@ LOGO ROW STYLING
 }
 @media (min-width: 768px) {
     .logo-row__img {
-        height: 36px;
+        height: 24px;
     }
 }
 
 .logo-row__img:hover {
     filter: grayscale(0);
     opacity: 1;
+}
+
+.logo-row__img[src*="woodling"], .logo-row__img[src*="costume"] {
+    filter: grayscale(100%) brightness(0.8);
+    opacity: 0.6;
+}
+
+.logo-row__img[src*="woodling"] {
+    padding-right: 3rem;
 }
 
 @keyframes logo-scroll {
