@@ -1,28 +1,21 @@
+import "@/styles/sections/cta.css"
+
 export default function CallToAction() {
     return (
-        <section>
-            <div>
-                <div classname="rounded-2xl md:rounded-3xl bg-white ring-1 ring-black/5 shadow-sm">
-                    <div>
-                        <h2>
-                            Klar til å skinne?
-                        </h2>
-                        <p>
-                            Sikre datoen din - fortell litt om tidspunkt, sted og ønsker.
-                        </p>
-                    </div>
+        <section className="cta">
+            <div className="cta-container container-fluid">
+                <h2 className="heading-2 cta-heading">
+                    Finn din look - <br className="sm:hidden"/> utforsk, kontakt eller book direkte
+                </h2>
 
-                    <div classname="shrink-0">
-                        <a
-                            href="/contact"
-                            classname=""
-                        >
-                            <span>
-                                Gå til kontaktskjema
-                            </span>
-                            <span>→</span>
-                        </a>
-                    </div>
+                <p className="text-body cta-subtext">
+                    Velg hva du ønsker å gjøre videre. Du kan se porteføljen for inspirasjon, kontakte meg direkte, eller sjekke priser.
+                </p>
+                
+                <div className="cta-action">
+                    <a href="/gallery" className="btn ">Se galleri</a>
+                    <a href="/contact" className="btn ">Ta kontakt</a>
+                    <a href="/prices" className="btn ">Se priser</a>
                 </div>
             </div>
         </section>
