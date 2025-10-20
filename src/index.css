@@ -12,11 +12,13 @@
   --bg-light: #f8f6f3;
   --surface: var(--bg-default);
   --surface-muted: var(--bg-light);
+  --bg-dark-brown: #544945;
 
   /* text colors */
   --text-primary: #111827;
   --text-secondary: #6b7280;
-  --text-light: white;
+  --text-light: #F3F2F2;
+  --text-light-secondary: #000;
 
   /* borders */
   --border-subtle: rgba(0, 0, 0, 0.05);
@@ -43,7 +45,7 @@ body {
 }
 
 /* Font utilities (enkelt og robust) */
-.font-playfair { font-family: "Playfair Display", serif; }
+.font-heading { font-family: "Playfair Display", serif; }
 .font-inter    { font-family: Inter, sans-serif; }
 .font-tangerine { font-family: 'Tangerine', cursive; }
 

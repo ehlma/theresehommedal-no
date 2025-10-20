@@ -7,6 +7,7 @@ import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import CollaborationPage from "./pages/CollaborationPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
+import Footer from "./features/sections/Footer.jsx";
 
 export default function App() {
   return (
@@ -25,6 +26,8 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+
+      <Footer/>
     </>
   );
 }
