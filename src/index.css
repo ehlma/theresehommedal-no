@@ -24,6 +24,7 @@
 
   /* accents (link, hover, emphasis) */
   --accent: #1f2937; /* neutral-800, endre senere*/
+  --accent-hover: #B2B09B;
 
   /* radius */
   --radius-md: 1rem; /* rounded-xl */
