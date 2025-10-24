@@ -22,7 +22,7 @@ export default function Hero() {
 					<div className="hero-col">
 						<div className="hero-row">
 							<div className="hero flex-1">
-								<h1 className="heading-hero font-playfair">
+								<h1 className="heading-hero font-heading">
 									Therese Hommedal
 								</h1>
 
