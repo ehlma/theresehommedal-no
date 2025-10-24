@@ -32,13 +32,14 @@
 }
 
 .footer .footer-logo {
-    font-family: var(--font-heading, 'Playfair Display', serif );
+    font-family: var(--font-heading, serif );
     font-size: 1.75rem;
     color: var(--text-light);
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
     color: var(--text-light);
+    letter-spacing: 0.1em;
 }
 
 .footer-logo:hover {

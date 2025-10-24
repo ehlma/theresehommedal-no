@@ -44,12 +44,14 @@ HERO SECTION STYLING
   width: 100%;
   align-self: flex-end;
   padding-bottom: 2rem;
+  padding-right: 1rem;
 }
 
 @media (min-width: 768px) {
   .hero-col {
     width: 44%;
     padding-bottom: 3rem;
+    padding-right: 1.5rem;
   }
 }
 
@@ -60,7 +62,7 @@ HERO SECTION STYLING
   flex-direction: column;
 }
 
-@media (min-width: 768) {
+@media (min-width: 768px) {
   .hero-row {
     flex-direction: row;
     align-items: flex-end;
@@ -71,6 +73,9 @@ HERO SECTION STYLING
 /* typografi og spacing */
 .hero h1.heading-hero {
   color: var(--text-light);
+  letter-spacing: 0.1em;
+  display: inline-block;
+  padding-right: 0.2em;
 }
 
 .hero .eyebrow {
