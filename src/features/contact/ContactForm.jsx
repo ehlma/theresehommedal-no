@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
 import { FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
 import "../../styles/pages/contact.css";
@@ -8,9 +8,19 @@ export default function ContactForm() {
     const [token, setToken] = useState(null);
     const [sending, setSending] = useState(false);
     const [result, setResult] = useState(null);
-    const startedAt = useRef(Date.now());
+    const startedAt = useRef(0);
 
     const debug = (...args) => { if (import.meta.env.DEV) console.log('[ContactForm]', ...args); };
+
+    // Start “tempo”-klokka ved mount
+    useEffect(() => {
+        startedAt.current = Date.now();
+    }, []);
+
+    // Start klokka første gang brukeren interagerer
+    const markStarted = () => {
+        if (!startedAt.current) startedAt.current = Date.now();
+    };
 
     const handleFormFocus = () => { startedAt.current = Date.now(); };
 
@@ -39,7 +49,6 @@ export default function ContactForm() {
             tookMs: Date.now() - startedAt.current, // tempo-sjekk
             cfToken: token, // turnstile token
         }
-        debug('payload', payload);
 
         try {
             const res = await fetch("/api/contact", {
@@ -57,6 +66,8 @@ export default function ContactForm() {
         } finally {
             setSending(false);
             setToken(null); // Krever ny captcha hvis bruker vil sende på nytt
+            startedAt.current = Date.now();
+
         }
     }
 
@@ -98,8 +109,8 @@ export default function ContactForm() {
                     {/* Skjema */}
                     <form
                         onSubmit={handleSubmit}
-                        onFocus={handleFormFocus}
-                        className="contact-form"
+                        onFocusCapture={markStarted}
+                        onInputCapture={markStarted} className="contact-form"
                         aria-busy={sending}
                         aria-live="polite"
                     >
@@ -134,7 +145,7 @@ export default function ContactForm() {
 
                                 <Turnstile
                                     siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-                                    onSuccess={(tok) => setToken(tok)}
+                                    onSuccess={setToken}
                                     onExpire={() => setToken(null)}
                                     onError={() => setToken(null)}
                                     options={{ appearance: "interaction-only" }}
