@@ -26,8 +26,6 @@ export default function EditorialPanel() {
                     </div>
                 </div>
                 
-                {/* <LogoRow/> */}
-
                 {/* bilde i "maske" */}
                 <div className="editorial__row editorial__row-reverse">
                     <div className="editorial__media shape-b">
@@ -35,14 +33,14 @@ export default function EditorialPanel() {
                     </div>
 
                     <div className="editorial-text">
-                        <p className="eyebrow">Tempor aliquip</p>
-                        <h2 className="heading-2">Aliqua duis</h2>
+                        <p className="eyebrow">Utforsk arbiedet mitt</p>
+                        <h2 className="heading-2">Et glimt inn i porteføljen</h2>
                         <p className="body-text">
-                            Ullamco aliquip nostrud ullamco aliqua exercitation laborum est occaecat. Magna enim veniam ipsum elit exercitation aliquip aliquip amet. Non ea ea et id minim irure elit sunt nisi ut pariatur. 
+                            Fra redaksjonelle oppdrag til bryllup og kampanjer – se et utvalg av looks som viser variasjonen i uttrykk, stil og stemning. Hvert prosjekt er skreddersydd med fokus på hud, tekstur og helhet.
                         </p>
 
-                        <a className="link-btn" href="#">
-                            <span>mollit exercitation</span>
+                        <a className="link-btn" href="makeup">
+                            <span>Se galleri</span>
                         </a>
                     </div>
                 </div>
