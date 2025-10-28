@@ -1,0 +1,123 @@
+/* =========================================
+   Collaboration Page
+   Matches classes used in CollaborationPage.jsx
+   ========================================= */
+
+.collab {
+  background: var(--bg-default);
+}
+
+/* Intro header at top of page */
+.collab-hero {
+  max-width: 70ch;
+  margin: 2.5rem auto 2rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .collab-hero {
+    margin: 3rem auto 2.5rem;
+  }
+}
+
+/* Each partner group section */
+.collab-section {
+  margin: 2.5rem auto;
+}
+
+/* Section title block (eyebrow + h2) */
+.collab-section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.collab-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Responsive gallery grid */
+.collab-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .collab-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .collab-gallery {
+    gap: 1.25rem;
+  }
+}
+
+/* Card + image + hover overlay */
+.collab-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  margin: 0; /* reset default figure margin */
+}
+
+.collab-card__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 3 / 4; /* keeps portrait ratio, adjust if needed */
+  transition: transform .25s ease, filter .25s ease, opacity .25s ease;
+}
+
+.collab-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 0.85rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.08) 60%, transparent);
+  color: var(--text-light, #fff);
+  font-size: 0.9rem;
+  line-height: 1.35;
+  opacity: 0;
+  transition: opacity .25s ease;
+  list-style-type: none;
+}
+
+/* Hover effects */
+.collab-card:hover .collab-card__overlay {
+  opacity: 1;
+}
+.collab-card:hover .collab-card__img {
+  transform: scale(1.02);
+}
+
+/* Optional: subtle focus styles for a11y if cards become links later */
+.collab-card:focus-within .collab-card__overlay {
+  opacity: 1;
+}
+
+
+
+/* Figcaption inside overlay spans layout */
+.collab-card__overlay span + span {
+  margin-top: .25rem;
+}
+
+/* When images have different aspect ratios, allow a landscape variation if needed */
+@media (max-width: 480px) {
+  .collab-card__img {
+    aspect-ratio: 4 / 5;
+  }
+}
+

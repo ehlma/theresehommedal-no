@@ -4,6 +4,7 @@
 @import "./styles/sections/services.css";
 @import "./styles/sections/logo-row.css";
 @import "./styles/sections/process.css";
+@import "@/styles/pages/collaboration.css";
 
 @font-face {
   font-family: "Vogue";
