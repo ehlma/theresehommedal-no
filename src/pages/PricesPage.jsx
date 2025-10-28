@@ -67,7 +67,7 @@ export default function PricesPage() {
             {/* Høyre – prisinnhold */}
             <div className="prices-right">
                 <header className="prices-header">
-                    <h1 className="prices-title">Prisliste.</h1>
+                    <h1 className="gallery-title-overlay-text">Prisliste</h1>
                     <p className="prices-subtitle">Brud- og forloverpriser</p>
                 </header>
 
