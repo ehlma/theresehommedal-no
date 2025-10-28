@@ -1,41 +1,95 @@
+import { collabs, imgUrl } from "@/data/collabs";
+import LogoRow from "@/features/sections/landing-page/LogoRow";
+
 export default function CollaborationPage () {
-    document.title = "Samarbeid – Therese Hommedal";
-  
-    const partners = [
-      "Vogue Scandinavia",
-      "Oslo Runway (Oslo Fashion Week)",
-      "Costume Awards",
-      "FREYA smykker",
-    ];
-  
+  document.title = "Samarbeid - Therese Hommedal"
+
+
+  // Tittel per slug
+  const slugLabels = {
+    "oslo-runway": "Oslo Runway",
+    "costume-awards": "Costume Awards",
+    "costume-mag": "Costume Magasin",
+    "camilla-ohrling": "Camilla Øhrling Jewelry",
+    "kreativ-shoot": "Kreativ shoot",
+  }; 
+
+  // Filtrer ut duplikater
+  const unique = collabs.filter((x) => !x.duplicateOf);
+
+  // Grupper etter partnerSlug
+  const groups = unique.reduce((acc, item) => {
+    const key = item.partnerSlug;
+    if (!acc[key]) acc[key] = { title: item.parnterName, items: [] };
+    acc[key].items.push(item);
+    return acc;
+  }, {});
+
+  const order = [
+    "oslo-runway",
+    "costume-mag",
+    "costume-awards",
+    "camilla-ohrling",
+    "kreativ-shoot",
+  ];
+
+
     return (
-      <div className="bg-white">
-        <div className="max-w-5xl mx-auto px-4 py-12">
-          <h1 className="font-tangerine text-6xl leading-none text-neutral-900">Samarbeid</h1>
-          <p className="mt-2 text-neutral-600">
-            Jeg gjør makeup og hår til kommersielle og kreative prosjekter – fra runway og editorials
-            til kampanjer, events og branded content. Jeg kan jobbe både i team og solo on-location.
-          </p>
-  
-          <h2 className="mt-8 text-sm uppercase tracking-[0.2em] text-neutral-500">Utvalgte samarbeid</h2>
-          <ul className="mt-3 grid sm:grid-cols-2 gap-2">
-            {partners.map((p) => (
-              <li key={p} className="rounded-full border border-neutral-300 px-4 py-2 text-sm text-neutral-800">
-                {p}
-              </li>
-            ))}
-          </ul>
-  
-          <div className="mt-10">
-            <a
-              href="/contact"
-              className="inline-flex items-center rounded-full border border-neutral-900 px-5 py-2 text-sm uppercase tracking-wide transition hover:bg-neutral-900 hover:text-white"
-            >
-              Ta kontakt
-            </a>
-          </div>
-        </div>
-      </div>
-    );
+      <section className="collab container-fluid">
+      <header className="collab-hero">
+        <h1 className="heading-2 font-heading">Samarbeid & omtale</h1>
+        <p className="text-body mt-2 max-w-prose">
+          Utvalgte samarbeid – runway, kampanje og editorials. Fokus på hud,
+          struktur og tidløshet.
+        </p>
+      </header>
+
+      {order
+        .filter((slug) => groups[slug])
+        .map((slug) => {
+          const { title, items } = groups[slug];
+          return (
+            <section key={slug} className="collab-section">
+              <div className="collab-section-header">
+                <p className="collab-eyebrow">{slugLabels[slug] ?? slug}</p>
+                <h2 className="heading-3 font-heading">{title}</h2>
+              </div>
+
+              <div className="collab-gallery">
+                {items.map((img) => (
+                  <figure key={img.id} className="collab-card">
+                    <img
+                      className="collab-card__img"
+                      src={imgUrl(img.file)}
+                      alt={[
+                        title,
+                        img.designer && `Designer: ${img.designer}`,
+                        img.photographer && `Foto: ${img.photographer}`,
+                      ]
+                        .filter(Boolean)
+                        .join(" ")}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    {(img.designer || img.photographer || img.notes) && (
+                      <figcaption className="collab-card__overlay">
+                        {img.designer && 
+                          <div className="overlay-line">Designer: {img.designer}</div>
+                        }
+                        {img.photographer && 
+                          <div className="overlay-line"> Foto: {img.photographer}</div>
+                        }
+                        {img.notes && <div className="overlay-line"> {img.notes}</div>}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </section>
+          );
+        })}
+        <LogoRow/>
+    </section>
+    )
   }
   
