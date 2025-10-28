@@ -81,7 +81,7 @@ export default function ContactForm() {
                     <div className="contact-head">
                         {/* Venstre: tittel og intro */}
                         <div className="contact-hero-copy">
-                            <h1 className="contact-h1">Kontakt.</h1>
+                            <h1 className="heading-1 heading-1--dark">Kontakt</h1>
                             <p className="contact-intro">
                                 Har du noen spørsmål? Fyll ut kontaktskjemaet så kommer jeg tilbake til deg så fort som mulig.
                             </p>

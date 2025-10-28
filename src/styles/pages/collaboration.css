@@ -3,6 +3,10 @@
    Matches classes used in CollaborationPage.jsx
    ========================================= */
 
+.heading-1 {
+  color: red;
+}
+
 .collab {
   background: var(--bg-default);
 }

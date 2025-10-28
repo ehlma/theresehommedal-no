@@ -9,7 +9,7 @@ export default function CollaborationPage () {
   const slugLabels = {
     "oslo-runway": "Oslo Runway",
     "costume-awards": "Costume Awards",
-    "costume-mag": "Costume Magasin",
+    "costume-mag": "Costume Magasin - desember/januar utgave 2024",
     "camilla-ohrling": "Camilla Øhrling Jewelry",
     "kreativ-shoot": "Kreativ shoot",
   }; 
@@ -37,7 +37,7 @@ export default function CollaborationPage () {
     return (
       <section className="collab container-fluid">
       <header className="collab-hero">
-        <h1 className="heading-2 font-heading">Samarbeid & omtale</h1>
+        <h1 className="heading-1 heading-1--dark">Samarbeid & omtale</h1>
         <p className="text-body mt-2 max-w-prose">
           Utvalgte samarbeid – runway, kampanje og editorials. Fokus på hud,
           struktur og tidløshet.

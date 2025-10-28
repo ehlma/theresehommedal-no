@@ -17,7 +17,7 @@ export default function Header() {
                 <div className="header-inner">
                     {/* Venstre blokk med logo + linker */}
                     <div className="header-left">
-                        <a href="/" className="header-logo font-heading">
+                        <a href="/" className="header-logo font-heading ">
                             Therese Hommedal
                         </a>
 
