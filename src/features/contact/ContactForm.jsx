@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Turnstile } from "@marsidev/react-turnstile";
-import { FaInstagram, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaPhone } from "react-icons/fa";
 import "../../styles/pages/contact.css";
 import c1 from "../../assets/gallery/g5.avif";
 
@@ -9,8 +9,6 @@ export default function ContactForm() {
     const [sending, setSending] = useState(false);
     const [result, setResult] = useState(null);
     const startedAt = useRef(0);
-
-    const debug = (...args) => { if (import.meta.env.DEV) console.log('[ContactForm]', ...args); };
 
     // Start “tempo”-klokka ved mount
     useEffect(() => {
@@ -22,54 +20,67 @@ export default function ContactForm() {
         if (!startedAt.current) startedAt.current = Date.now();
     };
 
-    const handleFormFocus = () => { startedAt.current = Date.now(); };
-
     async function handleSubmit(e) {
         e.preventDefault();
-        debug('submit fired');
+        const formEl = e.currentTarget;        // <- ta vare på form før await
         setSending(true);
         setResult(null);
 
-        debug('token at submit:', token);
         if (!token) {
-            debug('no token → early return');
             setSending(false);
-            setResult({ ok: false, msg: "Bekreft captcha først." });
+            setResult({ ok: false, msg: "Bekreft CAPTCHA først." });
             return;
         }
 
-        const form = new FormData(e.currentTarget);
+        const form = new FormData(formEl);
         const payload = {
             name: form.get("name")?.toString().trim() || "",
             email: form.get("email")?.toString().trim() || "",
             message: form.get("message")?.toString().trim() || "",
-
-            // anti-bot
-            hp: form.get("company")?.toString().trim() || "", // honeypot
-            tookMs: Date.now() - startedAt.current, // tempo-sjekk
-            cfToken: token, // turnstile token
-        }
+            hp: form.get("company")?.toString().trim() || "",
+            tookMs: Date.now() - startedAt.current,
+            cfToken: token,
+        };
 
         try {
-            const res = await fetch("/api/contact", {
+            const url = import.meta.env.DEV
+                ? "http://localhost:3000/api/contact"
+                : "/api/contact";
+
+            const res = await fetch(url, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
 
-            const data = await res.json().catch(() => ({}));
-            setResult({ ok: res.ok, msg: data?.message || (res.ok ? "Takk! Meldingen er sendt." : "Noe gikk galt.") });
+            // Les rå tekst først, prøv så JSON
+            const raw = await res.text();
+            let data = null;
+            try { data = raw ? JSON.parse(raw) : null; } catch { }
 
-            if (res.ok) e.currentTarget.reset();
-        } catch {
-            setResult({ ok: false, msg: "Kunne ikke kontakte serveren." });
+            if (!res.ok) {
+                setResult({
+                    ok: false,
+                    msg: (data && data.message) || `Serverfeil (${res.status}). Prøv igjen.`,
+                });
+                return;
+            }
+
+            setResult({ ok: true, msg: (data && data.message) || "Takk! Meldingen er sendt." });
+            formEl.reset();                        // <- bruk den lagrede referansen
+        } catch (err) {
+            setResult({
+                ok: false,
+                msg: `Fikk ikke kontakt med serveren (${err?.message || "ukjent feil"}). ` +
+                    `Meldingen kan være sendt – sjekk innboksen din og prøv igjen ved behov.`,
+            });
         } finally {
             setSending(false);
-            setToken(null); // Krever ny captcha hvis bruker vil sende på nytt
+            setToken(null);
             startedAt.current = Date.now();
-
         }
     }
+
 
     return (
         <div className="contact">
@@ -91,51 +102,82 @@ export default function ContactForm() {
                         <div className="contact-info">
                             <div className="contact-socials">
                                 <a href="/prices">Se priser</a>
-
-                                <a href="https://www.instagram.com/theresehommedal/" target="_blank" rel="noopener noreferrer">
+                                <a
+                                    href="https://www.instagram.com/theresehommedal/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
                                     <FaInstagram className="icon-20" />
                                     @theresehommedal
                                 </a>
-                                <a href="/makeup">Se min portofølje</a>
+                                <a href="/makeup">Se min portefølje</a>
                                 <a href="tel:+4792402601">
                                     <FaPhone className="icon-20" />
                                     <span>+47 92 40 26 01</span>
                                 </a>
                             </div>
-
-
                         </div>
                     </div>
+
                     {/* Skjema */}
                     <form
                         onSubmit={handleSubmit}
                         onFocusCapture={markStarted}
-                        onInputCapture={markStarted} className="contact-form"
+                        onInputCapture={markStarted}
+                        className="contact-form"
                         aria-busy={sending}
                         aria-live="polite"
                     >
                         <div className="form-two-col">
                             <div className="form-col">
-                                <input name="name" type="text" required placeholder="Navn*" autoComplete="name" className="contact-input field-name" />
-                                <input name="email" type="email" required placeholder="E-post*" autoComplete="email" className="contact-input field-email" />
-                                <input name="address" type="text" placeholder="Adresse" className="contact-input field-address" />
-                                <input name="contactRef" type="text" placeholder="Instagram / Telefon " className="contact-input field-contactref" />
+                                <input
+                                    name="name"
+                                    type="text"
+                                    required
+                                    placeholder="Navn*"
+                                    autoComplete="name"
+                                    className="contact-input field-name"
+                                />
+                                <input
+                                    name="email"
+                                    type="email"
+                                    required
+                                    placeholder="E-post*"
+                                    autoComplete="email"
+                                    className="contact-input field-email"
+                                />
+                                <input
+                                    name="address"
+                                    type="text"
+                                    placeholder="Adresse"
+                                    className="contact-input field-address"
+                                />
+                                <input
+                                    name="contactRef"
+                                    type="text"
+                                    placeholder="Instagram / Telefon"
+                                    className="contact-input field-contactref"
+                                />
                                 <div className="contact-media">
                                     <img src={c1} alt="Editorial mood" />
                                 </div>
                             </div>
-                            <div className="form-col">
-                                <input name="subject" type="text" placeholder="Emne*" className="contact-input field-subject" />
-                                <select name="service" defaultValue="" className="contact-input field-service">
-                                    <option value="" disabled>Hvilken tjeneste er du interessert i?</option>
-                                    <option value="brud">Brud</option>
-                                    <option value="makeup">Makeup</option>
-                                    <option value="hår">Hår</option>
-                                    <option value="samarbeid">Samarbeid</option>
-                                    <option value="annet">Annet</option>
-                                </select>
-                                <textarea name="message" rows={8} required minLength={10} placeholder="Melding" className="contact-textarea field-message" />
 
+                            <div className="form-col">
+                                <input
+                                    name="subject"
+                                    type="text"
+                                    placeholder="Emne*"
+                                    className="contact-input field-subject"
+                                />
+                                <textarea
+                                    name="message"
+                                    rows={8}
+                                    required
+                                    minLength={10}
+                                    placeholder="Melding"
+                                    className="contact-textarea field-message"
+                                />
 
                                 {/* honeypot */}
                                 <div aria-hidden="true" className="contact-honeypot">
@@ -145,45 +187,42 @@ export default function ContactForm() {
 
                                 <Turnstile
                                     siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY}
-                                    onSuccess={setToken}
+                                    onSuccess={(tok) => setToken(tok)}
                                     onExpire={() => setToken(null)}
                                     onError={() => setToken(null)}
                                     options={{ appearance: "interaction-only" }}
                                 />
 
                                 <p className="contact-dev">
-                                    * For andre og større samarbeid, ta kontakt med Linda Wickmann ved LW.agency på linda@lindawickmann.com.
+                                    * For andre og større samarbeid, ta kontakt med @lindawickmann ved @lwagency.
                                 </p>
 
-                                <button type="submit" disabled={sending || !token} onClick={() => debug('button clicked')} className="contact-btn">
+                                <button type="submit" disabled={sending || !token} className="contact-btn">
                                     {sending ? "Sender..." : "Send"}
                                 </button>
 
-                                {(!token && !sending) && <p className="contact-hint">Løs CAPTCHA først.</p>}
-
-                                {import.meta.env.DEV && (
-                                    <div className="contact-dev">
-                                        <div>DEV · token present: {String(!!token)}</div>
-                                        <div>DEV · button disabled: {String(sending || !token)}</div>
-                                        <div>DEV · site key: {String(import.meta.env.VITE_TURNSTILE_SITE_KEY || 'Mangler')}</div>
-                                    </div>
+                                {(!token && !sending && !result) && (
+                                    <p className="contact-hint">Løs CAPTCHA først.</p>
                                 )}
 
                                 {result && (
-                                    <p role="status" aria-live="polite" className={result.ok ? "contact-status contact-status--ok" : "contact-status contact-status--err"}>
+                                    <p
+                                        role="status"
+                                        aria-live="polite"
+                                        className={
+                                            result.ok
+                                                ? "contact-status contact-status--ok"
+                                                : "contact-status contact-status--err"
+                                        }
+                                    >
                                         {result.msg}
                                     </p>
                                 )}
-
                             </div>
-
                         </div>
                     </form>
-
                 </div>
             </section>
         </div>
     );
-
-
 }
