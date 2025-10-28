@@ -2,6 +2,7 @@ import "../../../styles/sections/header.css";
 
 export default function Header() {
     const navLinks = [
+        { label: "Hjem", href: "/" },
         { label: "Brud", href: "/bride" },
         { label: "Galleri", href: "/makeup" },
         { label: "Samarbeid", href: "/collaboration" },
