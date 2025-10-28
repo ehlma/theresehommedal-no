@@ -36,10 +36,10 @@ export default function AboutPage() {
                         <h2 className="about-copy__h">Alt fra BRYLLUP til CATWALK</h2>
 
                         <p className="about-copy__p">
-                            Utdannet ved LW School of Makeup. Jeg jobber med et rent og tidløst uttrykk der hud står i fokus – fra naturlig brudeglød til redaksjonelle looker. Hårstyling tilbys for en helhetlig finish.
+                            Utdannet ved LW School of Makeup i 2023. Jeg jobber med et rent og tidløst uttrykk der hud står i fokus – fra naturlig brudeglød til redaksjonelle looker. Hårstyling tilbys for en helhetlig finish.
                         </p>
                         <p className="about-copy__p">
-                            Erfaring med bruder og forlovere, og samarbeid med 3RD Management, Oslo Runway, Costume Awards og Camilla Øhrling Jewelery. Jeg sminker til runway, photoshoots, fester og bryllup – i studio og on location.
+                            Erfaring med bruder og forlovere, og samarbeid med blant annet 3RD Management, Oslo Runway, Costume Awards og Camilla Øhrling Jewelery. Jeg sminker til runway, photoshoots, fester og bryllup – i studio og on location.
                         </p>
                         <p className="about-copy__p">
                             Hver look skreddersys etter personlighet, hud og anledning – med produkter og teknikker som tåler lys, bevegelse og lange dager.

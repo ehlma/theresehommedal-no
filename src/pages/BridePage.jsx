@@ -245,7 +245,7 @@ export default function BridePage() {
 
                             <p className="mt-4 text-neutral-700">
                                 Enten du ønsker et klassisk oppsett, myke bølger eller en ren og sleek
-                                knute, finner vi en frisyre som passer til både kjole, ansiktsform og
+                                bun, finner vi en frisyre som passer til både kjole, ansiktsform og
                                 personlighet.<br /><br />
                                 Før bryllupsdagen setter vi opp en prøvetime hvor vi
                                 lander stil og tilbehør. På selve dagen kan jeg style både brud,

@@ -85,7 +85,7 @@ export default function PricesPage() {
                         * Reise utenfor Oslo i tillegg. Ta kontakt for tilgjengelighet.
                     </p>
                     <p className="prices-footnote">
-                        * For andre og større samarbeid, ta kontakt med @lindawickmann ved @lwagency.
+                        * For andre og større samarbeid, ta kontakt med Linda Wickmann ved LW.agency på linda@lindawickmann.com.
                     </p>
 
                     <div className="prices-contacts">
