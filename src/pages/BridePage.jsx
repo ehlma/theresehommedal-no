@@ -35,7 +35,7 @@ export default function BridePage() {
                     <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
                         {/* Tekst */}
                         <div className="max-w-xl">
-                            <h1 className="font-parisienne text-6xl md:text-7xl leading-none text-neutral-900">
+                            <h1 className="heading-1 heading-1--dark">
                                 MAKEUP <br />& HÅR
                             </h1>
 

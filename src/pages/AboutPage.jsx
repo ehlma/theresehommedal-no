@@ -19,7 +19,7 @@ export default function AboutPage() {
                 <div className="about-hero__gradient" />
                 <div className="about-hero__inner">
                     <span className="about-hero__eyebrow">Makeup Artist</span>
-                    <h1 className="gallery-title-overlay-text">Therese Hommedal</h1>
+                    <h1 className="heading-1 heading-1--light">Therese Hommedal</h1>
                 </div>
             </section>
 

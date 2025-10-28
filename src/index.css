@@ -79,6 +79,25 @@ body {
 }
 
 /* SEMANTIC TEXT PRESETS */
+.heading-1 {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  letter-spacing: 8px;
+  font-family: 'Inter', sans-serif;
+  /* white-space: nowrap; */
+}
+
+.heading-1--light {
+  color: #e1d5c5;
+}
+
+.heading-1--dark {
+  color: #222;
+}
+
 .heading-hero {
   @apply text-5xl md:text-6xl leading-tight text-neutral-100;
 }

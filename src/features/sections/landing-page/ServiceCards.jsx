@@ -22,7 +22,7 @@ export default function ServiceCards() {
                                 <div className="services-icon">💍</div>
                                 <h4 className="heading-4">Brud</h4>
                                 <p className="text-body mt-2">
-                                    Prøvetime og dagpakke for en varig, tidløs look.
+                                    Prøvetime og dagspakke for en varig, tidløs look.
                                 </p>
                             </div>
                             <a href="/bride" className="link-btn mt-3">
