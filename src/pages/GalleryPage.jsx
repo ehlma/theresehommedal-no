@@ -33,6 +33,11 @@ export default function MakeupPage() {
                         <span className="polaroid-title">{title}</span>
                     </div>
                 )}
+                {photographer && (
+                    <div>
+                        Foto: <span>{photographer}</span>
+                    </div>
+                )}
                 {stylist && (
                     <div>
                         Stylist: <span>{stylist}</span>
@@ -41,11 +46,6 @@ export default function MakeupPage() {
                 {designer && (
                     <div>
                         Designer: <span>{designer}</span>
-                    </div>
-                )}
-                {photographer && (
-                    <div>
-                        Foto: <span>{photographer}</span>
                     </div>
                 )}
                 {model && (

@@ -152,7 +152,7 @@ export default function ContactForm() {
                                 />
 
                                 <p className="contact-dev">
-                                    * For andre og større samarbeid, ta kontakt med @lindawickmann ved @lwagency.
+                                    * For andre og større samarbeid, ta kontakt med Linda Wickmann ved LW.agency på linda@lindawickmann.com.
                                 </p>
 
                                 <button type="submit" disabled={sending || !token} onClick={() => debug('button clicked')} className="contact-btn">
