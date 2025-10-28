@@ -19,7 +19,7 @@ export default function AboutPage() {
                 <div className="about-hero__gradient" />
                 <div className="about-hero__inner">
                     <span className="about-hero__eyebrow">Makeup Artist</span>
-                    <h1 className="about-hero__title">Therese Hommedal</h1>
+                    <h1 className="gallery-title-overlay-text">Therese Hommedal</h1>
                 </div>
             </section>
 
@@ -33,13 +33,13 @@ export default function AboutPage() {
                             <div className="about-copy__rule" />
                         </div>
 
-                        <h2 className="about-copy__h">alt fra BRYLLUP til CATWALK</h2>
+                        <h2 className="about-copy__h">Alt fra BRYLLUP til CATWALK</h2>
 
                         <p className="about-copy__p">
                             Utdannet ved LW School of Makeup. Jeg jobber med et rent og tidløst uttrykk der hud står i fokus – fra naturlig brudeglød til redaksjonelle looker. Hårstyling tilbys for en helhetlig finish.
                         </p>
                         <p className="about-copy__p">
-                            Erfaring fra bruder/forlovere og samarbeid med Vogue Scandinavia, Oslo Runway, Costume Awards og FREYA smykker. Jeg sminker til runway, photoshoots, fester og bryllup – i studio og on location.
+                            Erfaring med bruder og forlovere, og samarbeid med 3RD Management, Oslo Runway, Costume Awards og Camilla Øhrling Jewelery. Jeg sminker til runway, photoshoots, fester og bryllup – i studio og on location.
                         </p>
                         <p className="about-copy__p">
                             Hver look skreddersys etter personlighet, hud og anledning – med produkter og teknikker som tåler lys, bevegelse og lange dager.
