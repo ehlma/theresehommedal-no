@@ -7,70 +7,90 @@ const nodemailer = require("nodemailer");
 const { z } = require("zod");
 
 const app = express();
+
+// Trygg i dev: stol bare på loopback-proxy (unngår rate-limit advarsel)
 app.set("trust proxy", "loopback");
+
 app.use(express.json());
 
-// I dev: tillat alle origins. I prod: sett til domenet ditt.
+// CORS: i dev åpent; i prod, sett til domenet ditt
 app.use(cors({ origin: true }));
 
-// Valideringsskjema
+// ---- Validering ----
 const contactSchema = z.object({
     name: z.string().min(1).max(200),
     email: z.string().email().max(320),
     message: z.string().min(5).max(5000),
-    hp: z.string().optional(),                              // honeypot: må være tom
-    tookMs: z.number().int().nonnegative().optional(),      // tempo-sjekk
-    cfToken: z.string().min(10),                            // Turnstile token
+    // anti-bot
+    hp: z.string().optional(),
+    tookMs: z.number().int().nonnegative().optional(),
+    cfToken: z.string().min(10),
 });
 
-// Rate limit (5 requests / 10 min per IP)
-app.use("/api/contact", rateLimit({
-    windowMs: 10 * 60 * 1000,
-    max: 5,
-    standardHeaders: true, // Return rate limit info in the RateLimit-* headers
-    legacyHeaders: false,  // Disable the X-RateLimit-* headers
-    // keyGenerator: req => req.ip, // kan eksplisiteres om ønskelig
-}));
+// ---- Rate limit: 5 requests / 10 min ----
+app.use(
+    "/api/contact",
+    rateLimit({
+        windowMs: 10 * 60 * 1000,
+        max: 5,
+        standardHeaders: true,
+        legacyHeaders: false,
+    })
+);
 
-// SMTP-transport
+// ---- SMTP ----
 const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT || 587),
-    secure: Number(process.env.SMTP_PORT) === 465,
+    secure: Number(process.env.SMTP_PORT) === 465, // 465 = SSL, 587 = STARTTLS
     auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
+    tls: { minVersion: "TLSv1.2" },
 });
 
-transporter.verify()
+// Verifiser SMTP ved oppstart (logger bare)
+transporter
+    .verify()
     .then(() => console.log("SMTP-forbindelse OK"))
-    .catch(err => console.error("SMTP verify-feil:", err));
+    .catch((err) => console.error("SMTP verify-feil:", err));
 
-// Turnstile-verifisering
+// ---- Turnstile ----
 async function verifyTurnstile(token, ip) {
-    const params = new URLSearchParams();
-    params.append("secret", process.env.TURNSTILE_SECRET_KEY);
-    params.append("response", token);
-    if (ip) params.append("remoteip", ip);
+    try {
+        const params = new URLSearchParams();
+        params.append("secret", process.env.TURNSTILE_SECRET_KEY);
+        params.append("response", token);
+        if (ip) params.append("remoteip", ip);
 
-    const resp = await axios.post(
-        "https://challenges.cloudflare.com/turnstile/v0/siteverify",
-        params,
-        { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
-    );
-    return resp.data?.success === true; // <-- VIKTIG
+        const resp = await axios.post(
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            params,
+            { headers: { "Content-Type": "application/x-www-form-urlencoded" } }
+        );
+        return resp.data?.success === true;
+    } catch (e) {
+        console.error("Turnstile verify error:", e?.response?.data || e.message);
+        return false;
+    }
 }
 
+// ---- API ----
 app.post("/api/contact", async (req, res) => {
     try {
+        // console.log i dev (valgfritt)
+        if (process.env.NODE_ENV !== "production") {
+            console.log("PAYLOAD", req.body);
+        }
 
         const data = contactSchema.parse(req.body);
 
-        // Honeypot: skal være tom
+        // Honeypot
         if (data.hp && data.hp.trim()) {
             return res.status(400).json({ message: "Bot detected." });
         }
 
-        // Tempo-sjekk (enkelt bot-filter)
-        if ((data.tookMs ?? 0) < 1500) {
+        // Tempo-sjekk (justerbar via env)
+        const minMs = Number(process.env.MIN_FORM_TIME_MS ?? 1500);
+        if ((data.tookMs ?? 0) < minMs) {
             return res.status(400).json({ message: "Too fast." });
         }
 
@@ -99,15 +119,19 @@ app.post("/api/contact", async (req, res) => {
         <p><strong>Melding:</strong><br>${data.message.replace(/\n/g, "<br/>")}</p>
       `,
         });
-        console.log("sendMail info:", info);
 
+        // valgfritt i dev:
+        if (process.env.NODE_ENV !== "production") {
+            console.log("sendMail info:", info);
+        }
 
         return res.json({ message: "Takk! Meldingen er sendt.", id: info.messageId });
     } catch (err) {
         if (err?.issues) {
             return res.status(400).json({ message: "Ugyldig input." });
         }
-        console.error(err);
+        console.error("Handler error:", err);
+        const isDev = process.env.NODE_ENV !== "production";
         return res.status(500).json({
             message: isDev ? `Serverfeil: ${err?.code || err?.name || "ukjent"}` : "Serverfeil.",
             detail: isDev ? (err?.response?.data || err?.message || String(err)) : undefined,
