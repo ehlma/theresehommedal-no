@@ -1,3 +1,4 @@
+import LogoRow from "../features/sections/landing-page/LogoRow.jsx";
 import a1 from "../assets/about/a1.avif";
 import a2 from "../assets/about/a2.avif";
 import "../styles/pages/about.css";
@@ -68,7 +69,9 @@ export default function AboutPage() {
                             />
                         </div>
                     </figure>
+
                 </div>
+                <LogoRow />
             </section>
         </div>
     );
