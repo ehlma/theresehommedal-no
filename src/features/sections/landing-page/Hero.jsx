@@ -1,5 +1,5 @@
 import { FaInstagram } from "react-icons/fa";
-import heroImage from "../../../assets/collabs/c5.avif";
+import heroImage from "@/assets/therese-hero.avif";
 
 export default function Hero() {
 	return (

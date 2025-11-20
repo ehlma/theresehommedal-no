@@ -24,7 +24,7 @@
   --bg-dark-brown: #544945;
 
   /* text colors */
-  --text-primary: #111827;
+  --text-primary: #44403B;
   --text-secondary: #6b7280;
   --text-light: #F3F2F2;
   --text-light-secondary: #000;
@@ -91,11 +91,12 @@ body {
 }
 
 .heading-1--light {
-  color: #e1d5c5;
+  color: rgba(255, 255, 255, 0.80);
+  /* color: #fff; */
 }
 
 .heading-1--dark {
-  color: #222;
+  color: #44403B;
 }
 
 .heading-hero {
