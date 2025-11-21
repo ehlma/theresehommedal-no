@@ -21,11 +21,19 @@
     margin-inline: auto;
 }
 
-/* header innhold til venstre*/
+/* Venstre blokk */
 .header-left {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+/* Logo + hamburger-linje */
+.header-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* navn/logo */
@@ -35,28 +43,67 @@
     font-size: 1.9rem;
     color: #1c1c1c;
     text-decoration: none;
-    letter-spacing: 0.01em;
-    margin-bottom: 0.25rem;
     letter-spacing: 0.1em;
+    margin-bottom: 0.25rem;
 }
 
-/* Link-linje under */
+/* Hamburger-knapp (vises kun på små skjermer) */
+.header-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 32px;
+    height: 32px;
+    border-radius: 9999px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+
+.header-toggle-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #222;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    transform-origin: center;
+}
+
+/* Åpen meny: perfekt, symmetrisk kryss */
+.header-toggle--open .header-toggle-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.header-toggle--open .header-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.header-toggle--open .header-toggle-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Link-linje */
 .header-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.75rem;
     list-style: none;
     padding: 0;
     margin: 0;
     text-transform: uppercase;
     font-size: 11px;
     letter-spacing: 0.08em;
+
+    /* mobil: skjult som standard */
+    display: none;
 }
 
-.header-links a {
-    color: #222;
-    text-decoration: none;
-    transition: all 0.2s ease;
+/* Når menyen er åpen på mobil */
+.header-links--open {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .header-links a {
@@ -85,20 +132,27 @@
     color: #000;
 }
 
-/* Når du hover, bare animerer underline – ingen layout-endring */
 .header-links a:hover::after {
     opacity: 1;
     transform: scaleX(1);
 }
 
-
-/* responsivitet*/
+/* --------  DESKTOP  -------- */
 @media (min-width: 768px) {
     .header-logo {
         font-size: 1.5rem;
     }
 
+    /* Skjul hamburger på større skjermer */
+    .header-toggle {
+        display: none;
+    }
+
+    /* Vis horisontale linker som før */
     .header-links {
+        display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
+        margin-top: 0.35rem;
     }
 }
