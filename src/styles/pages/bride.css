@@ -1,0 +1,48 @@
+/* Brud – hårseksjon */
+
+/* Desktop / default – behold tre kolonner og polaroid-følelsen */
+.bride-hair-layout {
+    /* grid-oppsett kommer fra Tailwind-klasser på seksjonen */
+}
+
+.bride-hair-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    /* tilsvarer gap-6 */
+}
+
+.bride-hair-card {
+    /* rotasjon og skygge kommer fra Tailwind-klasser i JSX */
+}
+
+.bride-hair-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.75rem;
+    object-fit: cover;
+}
+
+/* mobil  */
+@media (max-width: 768px) {
+
+    .bride-hair-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+
+    .bride-hair-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .bride-hair-card {
+        transform: none !important;
+    }
+
+    .bride-hair-img {
+        aspect-ratio: 3 / 4;
+        height: auto;
+    }
+}

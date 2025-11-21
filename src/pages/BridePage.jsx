@@ -16,6 +16,8 @@ import h4 from "../assets/bride/hair/h4.avif";
 import h5 from "../assets/bride/hair/h5.avif";
 import h6 from "../assets/bride/hair/h6.avif";
 
+import "../styles/pages/bride.css";
+
 export default function BridePage() {
     document.title = "Brud – Therese Hommedal";
 
@@ -198,14 +200,13 @@ export default function BridePage() {
                 </div>
             </section>
 
-
             {/* HÅR  */}
             <section className="bg-gradient-to-b from-white to-[#eee6da]">
                 <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-                    <div className="grid items-start gap-10 md:grid-cols-[1.2fr_0.8fr]">
-                        {/* VENSTRE: Polaroid-grid 3x2 */}
-                        <div className="grid grid-cols-3 gap-6">
-                            {[h1, h2, h3, h4, h5, h6].map((src, i) => {
+                    <div className="bride-hair-layout grid items-start gap-10 md:grid-cols-[1.2fr_0.8fr]">
+                        {/* VENSTRE: Polaroid-grid */}
+                        <div className="bride-hair-grid grid grid-cols-3 gap-6">
+                            {hair.map((src, i) => {
                                 const rotations = [
                                     "-rotate-[2.5deg]",
                                     "rotate-[1.5deg]",
@@ -218,8 +219,9 @@ export default function BridePage() {
                                     <figure
                                         key={i}
                                         className={[
+                                            "bride-hair-card",
                                             "relative bg-white rounded-2xl shadow-2xl ring-1 ring-black/10",
-                                            "p-2 pt-2.5", // hvit kant som ramme
+                                            "p-2 pt-2.5",
                                             "transition-transform duration-200",
                                             rotations[i % rotations.length],
                                             "hover:rotate-0 hover:-translate-y-1"
@@ -228,7 +230,7 @@ export default function BridePage() {
                                         <img
                                             src={src}
                                             alt={`Hår galleri ${i + 1}`}
-                                            className="block h-full rounded-lg object-cover"
+                                            className="bride-hair-img block"
                                             loading="lazy"
                                             decoding="async"
                                         />
@@ -274,7 +276,6 @@ export default function BridePage() {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }

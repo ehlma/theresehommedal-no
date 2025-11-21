@@ -2,9 +2,9 @@ import "@/styles/sections/process.css"
 import "@/index.css"
 
 const steps = [
-    {title: "Forespørsel", text: "Sjekk dato, sted og behov. Du får raskt svar."},
-    {title: "Prøve", text: "Vi tester looken og finjusterer til den sitter perfekt."},
-    {title: "Den store dagen", text: "Presis oppmøre, rolig flyt - varig, fotoklar makeup."},
+    { title: "Forespørsel", text: "Sjekk dato, sted og behov. Du får raskt svar." },
+    { title: "Prøve", text: "Vi tester looken og finjusterer til den sitter perfekt." },
+    { title: "Den store dagen", text: "Presis oppmøte, rolig flyt - varig, fotoklar makeup." },
 ];
 
 export default function ProcessSteps() {

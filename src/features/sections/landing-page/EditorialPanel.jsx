@@ -14,7 +14,7 @@ export default function EditorialPanel() {
                         <p className="eyebrow">Tilnærming</p>
                         <h2 className="heading-2">Tidløs makeup, skapt for å vare - og for å være deg.</h2>
                         <p className="body-text">
-                            Jeg jobber hud-first, med lett hånd og presisjon, for et uttrykk som fremhever dine trekk. Resultatet er komfortabelt, fotovennlig og holder hele dagen.
+                            Jeg jobber med hud først, med lett hånd og presisjon, for et uttrykk som fremhever dine trekk. Resultatet er komfortabelt, fotovennlig og holder hele dagen.
                         </p>
                         <a className="link-btn" href="/about">
                             <span>Om meg</span>
@@ -22,14 +22,14 @@ export default function EditorialPanel() {
                     </div>
 
                     <div className="editorial__media shape-a">
-                        <img src={EditorialA} alt="Editorial makeup" loading="lazy" decoding="async"/>
+                        <img src={EditorialA} alt="Editorial makeup" loading="lazy" decoding="async" />
                     </div>
                 </div>
-                
+
                 {/* bilde i "maske" */}
                 <div className="editorial__row editorial__row-reverse">
                     <div className="editorial__media shape-b">
-                        <img src={EditorialB} alt="#" loading="lazy" decoding="async"/>
+                        <img src={EditorialB} alt="#" loading="lazy" decoding="async" />
                     </div>
 
                     <div className="editorial-text">
