@@ -30,14 +30,6 @@ export default function Footer() {
                     </a>
 
                     <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Annen link
-                    </a>
-
-                    <a
                         href="/contact"
                         // target="_blank"
                         rel="noopener noreferrer"
