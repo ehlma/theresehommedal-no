@@ -45,7 +45,7 @@ export default function ContactForm() {
         try {
             const url = import.meta.env.DEV
                 ? "http://localhost:3000/api/contact"
-                : "/api/contact";
+                : "https://api.theresehommedal.no/api/contact";
 
             const res = await fetch(url, {
                 method: "POST",
