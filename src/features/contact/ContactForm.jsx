@@ -113,7 +113,7 @@ export default function ContactForm() {
                                 <a href="/makeup">Se min portefølje</a>
                                 <a href="tel:+4792402601">
                                     <FaPhone className="icon-20" />
-                                    <span>+47 92 40 26 01</span>
+                                    <span>+47 91 56 56 38</span>
                                 </a>
                             </div>
                         </div>
