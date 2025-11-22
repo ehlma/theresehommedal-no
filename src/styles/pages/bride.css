@@ -46,3 +46,15 @@
         height: auto;
     }
 }
+
+@media (max-width: 480px) {
+    .bride-hair-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.875rem;
+    }
+
+    .bride-hair-img {
+        aspect-ratio: 3 / 4;
+        width: 100%;
+    }
+}
