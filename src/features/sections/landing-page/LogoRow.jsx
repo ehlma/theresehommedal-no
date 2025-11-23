@@ -5,10 +5,12 @@ import johaug from "@/assets/logos/johaug.png";
 import linda from "@/assets/logos/lindaWick.png";
 import oslorunway from "@/assets/logos/oslorunway.svg";
 import woodling from "@/assets/logos/woodling.png";
+import Hartlino from "@/assets/logos/Hartlino.avif";
 
 export default function LogoRow() {
   const logos = [
     { name: "Fenja", src: fenja },
+    { name: "Hartlino", src: Hartlino },
     { name: "Oslo Runway", src: oslorunway },
     { name: "Johaug", src: johaug },
     { name: "Costume", src: costume },
@@ -38,7 +40,7 @@ export default function LogoRow() {
                     loading="lazy"
                     decoding="async"
                   />
-                </li> 
+                </li>
               ))}
             </ul>
 
@@ -52,7 +54,7 @@ export default function LogoRow() {
                     loading="lazy"
                     decoding="async"
                   />
-                </li> 
+                </li>
               ))}
             </ul>
           </div>
