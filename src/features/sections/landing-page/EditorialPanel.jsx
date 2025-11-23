@@ -1,5 +1,5 @@
 import EditorialA from "../../../assets/bride/b4.avif";
-import EditorialB from "../../../assets/collabs/c7.avif";
+import EditorialB from "../../../assets/collabs/c32.jpeg";
 import LogoRow from "./LogoRow";
 
 import "@/styles/sections/editorial.css";
