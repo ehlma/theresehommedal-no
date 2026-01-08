@@ -7,7 +7,7 @@ export default function Header() {
     const navLinks = [
         { label: "Hjem", href: "/" },
         { label: "Brud", href: "/bride" },
-        { label: "Galleri", href: "/makeup" },
+        { label: "Galleri", href: "/gallery" },
         { label: "Samarbeid", href: "/collaboration" },
         { label: "Om meg", href: "/about" },
         { label: "Priser", href: "/prices" },

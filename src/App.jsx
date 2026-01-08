@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/bride" element={<BridePage />} />
           <Route path="/prices" element={<PricesPage />} />
-          <Route path="/makeup" element={<MakeupPage />} />
+          <Route path="/gallery" element={<MakeupPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/collaboration" element={<CollaborationPage />} />
@@ -27,7 +27,7 @@ export default function App() {
         </Routes>
       </main>
 
-      <Footer/>
+      <Footer />
     </>
   );
 }
