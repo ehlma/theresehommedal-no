@@ -104,9 +104,9 @@ export default function PricesPage() {
                             <span>@theresehommedal</span>
                         </a>
 
-                        <a href="tel:+4792402601" className="prices-link">
+                        <a href="tel:+4791565638" className="prices-link">
                             <FaPhone className="icon-20" />
-                            <span>+47 92 40 26 01</span>
+                            <span>+47 91 56 56 38</span>
                         </a>
                     </div>
                 </main>
