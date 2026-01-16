@@ -111,7 +111,7 @@ export default function ContactForm() {
                                     @theresehommedal
                                 </a>
                                 <a href="/makeup">Se min portefølje</a>
-                                <a href="tel:+4792402601">
+                                <a href="tel:+4791565638">
                                     <FaPhone className="icon-20" />
                                     <span>+47 91 56 56 38</span>
                                 </a>
