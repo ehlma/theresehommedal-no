@@ -7,5 +7,5 @@
     "checkJs": false,
     "baseUrl": "."
   },
-  "include": ["public/src"]
+  "include": ["src"]
 }
