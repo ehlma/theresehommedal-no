@@ -8,18 +8,18 @@ export default function PricesPage() {
 
     // Data
     const brud = [
-        { t: "Sminke og hår – brud", p: 8500 },
-        { t: "Sminke – brud", p: 6000 },
-        { t: "Hår – brud", p: 4000 },
+        { t: "Sminke og hår – brud", p: "8.500 - 11.000 (fra 01.01.2027)" },
+        { t: "Sminke – brud", p: "6.000 - 7.000 (fra 01.01.2027)" },
+        { t: "Hår – brud", p: "4.000 - 6.000 (fra 01.01.2027)" },
     ];
     const pakker = [
-        { t: "Sminke brud + 2 forlovere", p: 12000 },
-        { t: "Hår brud + 2 forlovere", p: 8000 },
+        { t: "Sminke brud + 2 forlovere", p: "12.000 - 13.000 (fra 01.01.2027)" },
+        { t: "Hår brud + 2 forlovere", p: "8.000 - 10.000 (fra 01.01.2027)" },
     ];
     const forlover = [
-        { t: "Hår og sminke – forlover", p: 4000 },
-        { t: "Sminke – forlover", p: 3000 },
-        { t: "Hår – forlover", p: "2000–2500" },
+        { t: "Hår og sminke – forlover", p: "4.000 - 5.000 (fra 01.01.2027)" },
+        { t: "Sminke – forlover", p: "3.000 - 4.000 (fra 01.01.2027)" },
+        { t: "Hår – forlover", p: "2.000–2.500 - 3.500 (fra 01.01.2027)" },
     ];
 
     const fmt = (v) =>
@@ -83,6 +83,9 @@ export default function PricesPage() {
 
                     <p className="prices-footnote">
                         * Reise utenfor Oslo i tillegg. Ta kontakt for tilgjengelighet.
+                    </p>
+                    <p className="prices-footnote">
+                        * Depositum på 25% betales ved booking.
                     </p>
                     <p className="prices-footnote">
                         * For andre og større samarbeid, ta kontakt med Linda Wickmann ved LW.agency på linda@lindawickmann.com.
